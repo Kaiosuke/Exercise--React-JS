@@ -75,7 +75,7 @@ const dataList: Data[] = [
     final_price: 244300,
     image:
       "https://canifa.com/img/500/750/resize/1/t/1te23w005-fb488-1-thumbjpg.jpg",
-    meta_title: "Áo gilet len bé gái cổ tim 1TE23W005",
+    meta_title: "Áo gilet len bé gái cổ tim 1TE23W00",
     meta_description: "Áo len gilet bé gái",
     name: "Áo gilet len bé gái cổ tim",
     short_description:
