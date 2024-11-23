@@ -144,8 +144,7 @@ const dataList: Data[] = [
     sku: "2TW23W014",
     slug: "ao-ni-be-trai-2tw23w014",
     stock: 262708,
-    materials:
-      "Vải chính: 60% cotton 40% polyester.\r\nVải phối: 60% cotton 40% polyester.",
+    materials: "Vải chính: 60% cotton 40% polyester.\r\nVải phối: 60% cotton",
     main_category: "Sale corner",
     instruction:
       "Giặt máy ở nhiệt độ thường,không ngâm.\r\nKhông sử dụng hóa chất tẩy có chứa Clo.\r\nPhơi trong bóng mát.\r\nKhông sử dụng máy sấy.\r\nLà ở nhiệt độ thấp 110 độ C.\r\nGiặt với sản phẩm cùng màu.\r\nKhông là lên chi tiết trang trí.\r\nKhông được ngâm.",
@@ -372,7 +371,7 @@ const dataList: Data[] = [
     materials: "50% viscose 28% polyester.",
     main_category: "Áo len",
     instruction:
-      "Giặt máy ở chế độ nhẹ,không ngâm.\nKhông sử dụng hóa chất tẩy có chứa clo.\nPhơi vắt ngang, trong bóng mát.\nKhông sử dụng máy sấy.\nLà ở nhiệt độ trung bình 130 độ C.\nGiặt mặt trái sản phẩm.\nSản phẩm có nguy cơ xù lông, rụng lông và phai ra màu nhạt hơn.",
+      "Giặt máy ở chế độ nhẹ,không ngâm.\nKhông sử dụng hóa chất tẩy có chứa clo.\nPhơi vắt ngang, trong bóng mát.\nKhông sử dụng máy sấy.\nLà ở nhiệt độ trung bình 130 độ C.\nGiặt mặt trái sản phẩm.\nSản phẩm có nguy cơ xù lông",
     is_pre_order: false,
   },
   {
@@ -586,7 +585,7 @@ const dataList: Data[] = [
     materials: "60% cotton 40% polyester.",
     main_category: "Giá tốt",
     instruction:
-      "Giặt máy ở chế độ nhẹ, nhiệt độ thường.\r\nKhông sử dụng hóa chất tẩy có chứa Clo.\r\nPhơi trong bóng mát.\r\nKhông sử dụng máy sấy.\r\nLà ở nhiệt độ thấp 110 độ C.\r\nGiặt riêng quần áo tối màu. Không ngâm. Sản phẩm dễ tạo xơ vón, loại bỏ bằng kéo hoặc máy cạo xơ.",
+      "Giặt máy ở chế độ nhẹ, nhiệt độ thường.\r\nKhông sử dụng hóa chất tẩy có chứa Clo.\r\nPhơi trong bóng mát.\r\nKhông sử dụng máy sấy.\r\nLà ở nhiệt độ thấp 110 độ C.\r\nGiặt riêng quần áo tối màu. Không ngâm. Sản phẩm dễ tạo xơ vón",
     is_pre_order: false,
   },
   {
@@ -713,7 +712,7 @@ const dataList: Data[] = [
     materials: "60% cotton 40% polyester.",
     main_category: "Áo nỉ",
     instruction:
-      "Giặt máy ở chế độ nhẹ, nhiệt độ thường.\r\nKhông sử dụng hóa chất tẩy có chứa Clo.\r\nPhơi trong bóng mát.\r\nSấy thùng, chế độ nhẹ nhàng.\r\nLà ở nhiệt độ trung bình 150 độ C.\r\nGiặt với sản phẩm cùng màu.\r\nKhông là lên chi tiết trang trí.",
+      "Giặt máy ở chế độ nhẹ, nhiệt độ thường.\r\nKhông sử dụng hóa chất tẩy có chứa Clo.\r\nPhơi trong bóng mát.\r\nSấy thùng, chế độ nhẹ nhàng.\r\nLà ở nhiệt độ trung bình 150 độ C.\r\nGiặt với sản phẩm cùng màu.",
     is_pre_order: false,
   },
   {
@@ -733,7 +732,7 @@ const dataList: Data[] = [
     materials: "100% cotton.",
     main_category: "Áo kiểu",
     instruction:
-      "Giặt máy ở nhiệt độ thường,không ngâm.\nKhông sử dụng hóa chất tẩy có chứa Clo.\nPhơi trong bóng mát.\nKhông sử dụng máy sấy.\nLà ở nhiệt độ thấp 110 độ.\nGiặt riêng.\nKhông là lên chi tiết trang trí.\nSản phẩm có thể dây màu ra màu sáng hơn.",
+      "Giặt máy ở nhiệt độ thường,không ngâm.\nKhông sử dụng hóa chất tẩy có chứa Clo.\nPhơi trong bóng mát.\nKhông sử dụng máy sấy.\nLà ở nhiệt độ thấp 110 độ.\nGiặt riêng.\nKhông là lên chi tiết trang trí.",
     is_pre_order: false,
   },
   {
@@ -845,7 +844,7 @@ const dataList: Data[] = [
     materials: "52% polyester 48% cotton.",
     main_category: "Áo nỉ",
     instruction:
-      "Giặt máy ở chế độ nhẹ, nhiệt độ thường.\r\nKhông sử dụng hóa chất tẩy có chứa Clo.\r\nPhơi trong bóng mát.\r\nKhông sử dụng máy sấy.\r\nLà ở nhiệt độ thấp 110 độ C.\r\nGiặt riêng quần áo tối màu. Không ngâm. Sản phẩm dễ tạo xơ vón, loại bỏ bằng kéo hoặc máy cạo xơ.",
+      "Giặt máy ở chế độ nhẹ, nhiệt độ thường.\r\nKhông sử dụng hóa chất tẩy có chứa Clo.\r\nPhơi trong bóng mát.\r\nKhông sử dụng máy sấy.\r\nLà ở nhiệt độ thấp 110 độ C.\r\nGiặt riêng quần áo tối màu. Không ngâm. Sản phẩm dễ tạo xơ vón",
     is_pre_order: false,
   },
   {
@@ -864,7 +863,7 @@ const dataList: Data[] = [
     materials: "60% cotton 40% polyester.",
     main_category: "Giá tốt",
     instruction:
-      "Giặt máy ở chế độ nhẹ, nhiệt độ thường.\r\nKhông sử dụng hóa chất tẩy có chứa Clo.\r\nPhơi trong bóng mát.\r\nSấy thùng, chế độ nhẹ nhàng.\r\nLà ở nhiệt độ trung bình 150 độ C.\r\nGiặt với sản phẩm cùng màu.\r\nKhông là lên chi tiết trang trí.",
+      "Giặt máy ở chế độ nhẹ, nhiệt độ thường.\r\nKhông sử dụng hóa chất tẩy có chứa Clo.\r\nPhơi trong bóng mát.\r\nSấy thùng, chế độ nhẹ nhàng.\r\nLà ở nhiệt độ trung bình 150 độ C.\r\nGiặt với sản phẩm cùng màu.",
     is_pre_order: false,
   },
   {
@@ -903,7 +902,7 @@ const dataList: Data[] = [
     materials: "60% polyester 40% cotton.",
     main_category: "Áo polo",
     instruction:
-      "Giặt máy ở nhiệt độ thường,không ngâm. Không sử dụng hóa chất tẩy có chứa Clo. Phơi ngay khi giặt xong. Không sử dụng máy sấy. Là ở nhiệt độ thấp 110 độ C. Giặt với sản phẩm cùng màu. Không là lên chi tiết trang trí.",
+      "Giặt máy ở nhiệt độ thường,không ngâm. Không sử dụng hóa chất tẩy có chứa Clo. Phơi ngay khi giặt xong. Không sử dụng máy sấy. Là ở nhiệt độ thấp 110 độ C..",
     is_pre_order: false,
   },
   {
@@ -920,10 +919,10 @@ const dataList: Data[] = [
     slug: "ao-khoac-da-nu-6ot24w017",
     stock: 277492,
     materials:
-      "Màu SP332, SE065: 90% polyester 10% rayon.\nMàu SK010: 80% polyester 20% rayon.\nLớp lót: 100% polyester.",
+      "Màu SP332, SE065: 90% polyester 10% rayon.\nMàu SK010: 80% polyester 20% rayon.",
     main_category: "Đồ mặc ngoài",
     instruction:
-      "Giặt máy ở nhiệt độ thường,không ngâm.\nKhông sử dụng hóa chất tẩy có chứa Clo.\nPhơi trong bóng mát.\nKhông sử dụng máy sấy.\nLà ở nhiệt độ thấp 110 độ.\nGiặt riêng.\nKhông là lên chi tiết trang trí.\nSản phẩm có thể dây màu ra màu sáng hơn.\n\nGiặt máy ở nhiệt độ thường.\nKhông sử dụng hóa chất tẩy có chứa Clo.\nPhơi trong bóng mát.\nKhông sử dụng máy sấy.\nLà ở nhiệt độ thấp 110 độ C.\nCó thể giặt khô.\nGiặt với sản phẩm cùng màu.\nKhông là lên chi tiết trang trí.",
+      "Giặt máy ở nhiệt độ thường,không ngâm.\nKhông sử dụng hóa chất tẩy có chứa Clo.\nPhơi trong bóng mát.\nKhông sử dụng máy sấy.\nLà ở nhiệt độ thấp 110 độ.",
     is_pre_order: false,
   },
   {

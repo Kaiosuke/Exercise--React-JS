@@ -39,34 +39,38 @@ const ProductList: React.FC<{ data: Data }> = ({ data }) => {
 
   return (
     <>
-      <div className="flex gap-4 pt-4">
-        <div className="flex-[1_0_auto] max-w-[25%]">
+      <div className="border-2 border-cyan-400 p-2 text-center mt-4 rounded-lg">
+        <div>
           <a href="#!">
-            <img src={image} alt={name} />
+            <img className="w-40 m-auto" src={image} alt={name} />
           </a>
         </div>
-        <div className="flex-[1_0_auto] max-w[75%]">
+        <div className="">
           <div className="flex flex-col gap-4">
-            <div className="flex flex-col">
-              <a href="#!" className="hover:underline">
-                <h2 className="text-2xl font-bold">{name}</h2>
+            <div className="flex flex-col h-20">
+              <a href="#!" className="hover:underline h-16">
+                <h2 className="text-xl font-bold dark:text-white">{name}</h2>
               </a>
-              <span className="font-semibold ">{formatMoney(final_price)}</span>
+              <span className="font-semibold dark:text-white">
+                {formatMoney(final_price)}
+              </span>
             </div>
-            <div className="flex flex-col">
-              <span>Sku: {sku}</span>
-              <span>Stock: {stock}</span>
-              <span>{meta_description}</span>
+            <div className="flex flex-col h-[140px]">
+              <span className="dark:text-white">Sku: {sku}</span>
+              <span className="dark:text-white">Stock: {stock}</span>
+              <span className="dark:text-white">{meta_description}</span>
             </div>
-            <div className="flex flex-col">
-              <span className="px-2.5 py-1 bg-gray-400 text-white rounded-xl w-fit">
+            <div className="flex flex-col m-auto h-18">
+              <span className="w-fit px-2.5 h-16 bg-gray-400 text-white rounded-xl flex items-center justify-center">
                 Materials: {materials}
               </span>
-              <span>Stock: {stock}</span>
+              <span className="dark:text-white">Stock: {stock}</span>
             </div>
             <div className="flex flex-col">
-              <span className="font-medium">{instruction}</span>
-              <span className="px-2.5 py-1 bg-red-300 text-white rounded-xl w-fit">
+              <span className="font-medium h-40 dark:text-white">
+                {instruction}
+              </span>
+              <span className="px-2.5 py-1 bg-red-300 text-white rounded-xl w-fit m-auto">
                 {main_category}
               </span>
             </div>

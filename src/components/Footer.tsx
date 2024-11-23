@@ -1,5 +1,11 @@
 const Footer = () => {
-  return <div className="w-full bg-slate-400 mt-10">Footer</div>;
+  return (
+    <footer className=" bg-orange-200  flex items-center justify-between dark:bg-slate-500 dark:text-white p-4">
+      <a href="#!" className="text-2xl font-bold">
+        Footer
+      </a>
+    </footer>
+  );
 };
 
 export default Footer;
