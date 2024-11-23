@@ -158,7 +158,7 @@ const dataList: Data[] = [
     meta_description: "Quần dài nữ",
     name: "Quần dài nữ dáng suông, gấu lơ vê",
     short_description:
-      "Quần dài nữ dáng suông rộng vừa, gấu lơ vê. Chất liệu mềm mại, đứng dáng. Thiết kế với độ rộng vừa phải, phù hợp môi trường lịch sự, văn phòng, công sở.",
+      "Quần dài nữ dáng suông rộng vừa, gấu lơ vê. Chất liệu mềm mại, đứng dáng. Thiết kế với độ rộng vừa, phù hợp môi trường lịch sự, văn phòng, công sở.",
     status: 1,
     sku: "6BP24W003",
     slug: "quan-dai-nu-6bp24w003",
