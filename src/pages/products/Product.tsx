@@ -35,6 +35,7 @@ const Product = () => {
   }, [search]);
 
   useEffect(() => {
+    let ignore = false;
     (async () => {
       try {
         const res = await fetch(
@@ -45,16 +46,19 @@ const Product = () => {
         }
         const data: { products: Products[]; total: number; limit: number } =
           await res.json();
-        setProducts(data.products);
+        if (!ignore) setProducts(data.products);
         if (limit > 0) {
-          setPages(Math.ceil(data.total / limit));
+          if (!ignore) setPages(Math.ceil(data.total / limit));
         } else {
-          setPages(1);
+          if (!ignore) setPages(1);
         }
       } catch (error) {
-        console.log(error);
+        if (!ignore) console.log(error);
       }
     })();
+    return () => {
+      ignore = true;
+    };
   }, [debouncedSearch, skip, limit, order]);
 
   const currentPage = skip / limit;
