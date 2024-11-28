@@ -49,6 +49,7 @@ const DbModelUpdate = forwardRef<HTMLDialogElement, DbModelUpdateProps>(
         info: product,
       },
     });
+
     useEffect(() => {
       if (product) {
         methods.reset({
@@ -85,6 +86,7 @@ const DbModelUpdate = forwardRef<HTMLDialogElement, DbModelUpdateProps>(
                 <input
                   type="text"
                   className="text-white grow w-full placeholder:text-white opacity-70"
+                  placeholder="Product title"
                   {...methods.register("info.title")}
                 />
               </label>
@@ -95,6 +97,7 @@ const DbModelUpdate = forwardRef<HTMLDialogElement, DbModelUpdateProps>(
                 <input
                   type="text"
                   className="text-white grow w-full placeholder:text-white opacity-70"
+                  placeholder="Category"
                   {...methods.register("info.category")}
                 />
               </label>
@@ -107,6 +110,7 @@ const DbModelUpdate = forwardRef<HTMLDialogElement, DbModelUpdateProps>(
                     <input
                       type="text"
                       className="text-white grow w-full placeholder:text-white opacity-70"
+                      placeholder="quantity"
                       {...methods.register("info.stock", {
                         valueAsNumber: true,
                       })}
@@ -121,6 +125,7 @@ const DbModelUpdate = forwardRef<HTMLDialogElement, DbModelUpdateProps>(
                     <input
                       type="text"
                       className="text-white grow w-full placeholder:text-white opacity-70"
+                      placeholder="Price"
                       {...methods.register("info.price", {
                         valueAsNumber: true,
                       })}
