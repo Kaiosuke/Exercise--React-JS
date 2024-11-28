@@ -16,7 +16,7 @@ const DBHeader = () => {
           <FaBars className="text-text-second text-2xl" />
         </div>
         <div className="ml-4 ">
-          <NavLink className="flex items-center gap-2" to="/admin">
+          <div className="flex items-center gap-2">
             <NavLink to="/" className="w-14 rounded-full">
               <img
                 className="object-contain"
@@ -24,7 +24,7 @@ const DBHeader = () => {
               />
             </NavLink>
             <span className="text-white text-2xl">DashBoard</span>
-          </NavLink>
+          </div>
         </div>
         <div className="ml-20">
           <label className="input input-bordered flex items-center gap-2 h-10 w-[380px] bg-second border-gray-500 ">

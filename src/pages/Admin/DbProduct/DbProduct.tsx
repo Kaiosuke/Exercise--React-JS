@@ -50,9 +50,17 @@ const DbProduct = () => {
     refUpdate.current && refUpdate.current.showModal();
   };
 
-  const handleUpdate = (product: any[]) => {
-    setStateProduct(!stateProduct);
-    productId && updateData("products", productId, product);
+  const handleUpdate = (product: any) => {
+    if (productId) {
+      const newProducts: any = products.map((item: { id: number }) => {
+        if (item.id === product.id) {
+          return { ...product };
+        }
+        return { ...item };
+      });
+      setProducts(newProducts);
+      updateData("products", productId, product);
+    }
   };
 
   const handleShowMdDelete = (id: number) => {
@@ -61,8 +69,13 @@ const DbProduct = () => {
   };
 
   const handleDelete = () => {
-    setStateProduct(!stateProduct);
-    productId && deleteData("products", productId);
+    if (productId) {
+      const newProducts = products.filter((product: { id: number }) => {
+        return product.id !== productId;
+      });
+      setProducts(newProducts);
+      deleteData("products", productId);
+    }
   };
 
   const offset = currentPage * itemsPerPage;
