@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { FaBars, FaBell, FaMoon, FaSun } from "react-icons/fa";
 import { PiSquaresFourFill } from "react-icons/pi";
 import { NavLink } from "react-router-dom";

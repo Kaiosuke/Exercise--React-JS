@@ -1,5 +1,3 @@
-import React from "react";
-
 const DbAuth = () => {
   return <div>Auth</div>;
 };

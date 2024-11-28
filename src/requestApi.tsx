@@ -1,13 +1,13 @@
 import axios from "axios";
 
-interface ApiType {
-  path: string;
-  debouncedSearch: string;
-  limit: number;
-  skip: number;
-  sortBy: string;
-  order: string;
-}
+// interface ApiType {
+//   path: string;
+//   debouncedSearch: string;
+//   limit: number;
+//   skip: number;
+//   sortBy: string;
+//   order: string;
+// }
 
 const getProduct = async (id: number) => {
   try {
