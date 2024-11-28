@@ -8,7 +8,7 @@ import DbUser from "./pages/Admin/DbUser/DbUser";
 import RootAdmin from "./pages/Admin/RootAdmin";
 import Home from "./pages/Home/Home";
 import Root from "./pages/Root";
-import Product from "./pages/Products/Product";
+import Products from "./pages/Products/Products";
 
 function App() {
   return (
@@ -16,7 +16,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Root />}>
           <Route index element={<Home />} />
-          <Route path="product" element={<Product />} />
+          <Route path="products" element={<Products />} />
         </Route>
 
         <Route path="/admin" element={<RootAdmin />}>
