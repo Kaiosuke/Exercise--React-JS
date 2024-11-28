@@ -2,13 +2,13 @@
   "products": [
     {
       "id": 14,
-      "title": "Knoll Saarinen Executive Conference Chair",
+      "title": "321",
       "description": "The Knoll Saarinen Executive Conference Chair is a modern and ergonomic chair, perfect for your office or conference room with its timeless design.",
-      "category": "furniture",
-      "price": 499.99,
+      "category": "23",
+      "price": 32,
       "discountPercentage": 15.23,
       "rating": 4.11,
-      "stock": 47,
+      "stock": 23,
       "tags": [
         "furniture",
         "office chairs"
@@ -183,7 +183,7 @@
       "title": "Honey Jar",
       "description": "Pure and natural honey in a convenient jar, perfect for sweetening beverages or drizzling over food.",
       "category": "groceries",
-      "price": 6.99,
+      "price": 7.22,
       "discountPercentage": 1.91,
       "rating": 3.5,
       "stock": 25,
