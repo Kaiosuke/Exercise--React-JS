@@ -7,9 +7,9 @@ import DbProduct from "./pages/Admin/DbProduct/DbProduct";
 import DbUser from "./pages/Admin/DbUser/DbUser";
 import RootAdmin from "./pages/Admin/RootAdmin";
 import Home from "./pages/Home/Home";
+import Root from "./pages/Root";
 import Product from "./pages/Products/Product";
 import ProductDetail from "./pages/Products/ProductDetail/ProductDetail";
-import Root from "./pages/Root";
 
 function App() {
   return (
