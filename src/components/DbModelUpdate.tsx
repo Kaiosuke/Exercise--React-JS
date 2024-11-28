@@ -10,7 +10,7 @@ import { getData } from "../requestApi";
 // }
 
 interface DbModelUpdateProps {
-  onUpdate: (product: any[]) => void;
+  onUpdate: any;
   id: number | null;
   name: string;
 }
