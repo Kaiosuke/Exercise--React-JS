@@ -25,12 +25,12 @@ const ProductList: React.FC<{ data: Products; view: string }> = ({
       {view === "grid" ? (
         <div className="card card-compact bg-base-100  shadow-xl">
           <figure>
-            <NavLink to={`/product/${id}`}>
+            <NavLink to={`/products/${id}`}>
               <img src={thumbnail} alt={title} />
             </NavLink>
           </figure>
           <div className="card-body">
-            <NavLink to={`/product/${id}`}>
+            <NavLink to={`/products/${id}`}>
               <h2 className="card-title hover:underline">{title}</h2>
             </NavLink>
             <p>{description}</p>

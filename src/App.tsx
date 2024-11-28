@@ -9,6 +9,7 @@ import RootAdmin from "./pages/Admin/RootAdmin";
 import Home from "./pages/Home/Home";
 import Root from "./pages/Root";
 import Products from "./pages/Products/Products";
+import ProductDetail from "./pages/Products/ProductDetail/ProductDetail";
 
 function App() {
   return (
@@ -17,8 +18,8 @@ function App() {
         <Route path="/" element={<Root />}>
           <Route index element={<Home />} />
           <Route path="products" element={<Products />} />
+          <Route path="products/:id" element={<ProductDetail />} />
         </Route>
-
         <Route path="/admin" element={<RootAdmin />}>
           <Route path="inbox" element={<DbInbox />} />
           <Route path="product" element={<DbProduct />} />
