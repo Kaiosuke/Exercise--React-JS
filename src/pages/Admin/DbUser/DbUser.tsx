@@ -1,5 +1,5 @@
 const DbUser = () => {
-  return <div>User</div>;
+  return <div>Users</div>;
 };
 
 export default DbUser;
