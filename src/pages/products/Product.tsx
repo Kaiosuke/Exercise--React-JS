@@ -1,10 +1,14 @@
 import { useEffect, useState } from "react";
-// import { dataList } from "../../dataList";
+
+import { getApi } from "../../requestApi";
 import ProductList from "./ProductList";
-import { CiBoxList } from "react-icons/ci";
-import { MdGridView } from "react-icons/md";
+import ProductViews from "./ProductViews";
+import ProductSearch from "./ProductSearch";
+import ProductArrange from "./ProductArrange";
+import ProductPagination from "./ProductPagination";
 
 interface Products {
+  id: number;
   price: number;
   thumbnail: string;
   title: string;
@@ -13,8 +17,7 @@ interface Products {
 }
 
 const Product = () => {
-  const viewList = ["grid", "list"];
-
+  const path = "https://dummyjson.com";
   const [products, setProducts] = useState<Products[]>([]);
   const [view, setView] = useState("grid");
   const [limit, setLimit] = useState(8);
@@ -38,14 +41,17 @@ const Product = () => {
     let ignore = false;
     (async () => {
       try {
-        const res = await fetch(
-          `https://dummyjson.com/products/search?q=${debouncedSearch}&limit=${limit}&skip=${skip}&sortBy=${sortBy}&order=${order}`
+        const dataList = await getApi(
+          path,
+          debouncedSearch,
+          limit,
+          skip,
+          sortBy,
+          order
         );
-        if (!res.ok) {
-          throw new Error(res.status.toString());
-        }
         const data: { products: Products[]; total: number; limit: number } =
-          await res.json();
+          dataList;
+
         if (!ignore) setProducts(data.products);
         if (limit > 0) {
           if (!ignore) setPages(Math.ceil(data.total / limit));
@@ -91,10 +97,6 @@ const Product = () => {
     return pagination;
   };
 
-  const handleView = (value: string) => {
-    setView(value);
-  };
-
   const handleLimit = (value: number | string) => {
     if (value === "all") {
       setSkip(0);
@@ -127,67 +129,12 @@ const Product = () => {
   return (
     <div className="max-w-[1200px] m-auto">
       <div className="flex items-center justify-between">
-        <div className="flex items-center gap-2">
-          {viewList.map((v, index) => (
-            <div
-              key={index}
-              className={`text-3xl w-8 h-8 border border-cyan-600 flex items-center justify-center cursor-pointer ${
-                v === view ? "bg-slate-400 text-white" : "text-black"
-              }`}
-              onClick={() => handleView(v)}
-            >
-              {v === "list" ? <CiBoxList /> : <MdGridView />}
-            </div>
-          ))}
-        </div>
-        <div>
-          <input
-            className="border border-cyan-600 px-2.5 py-1"
-            type="text"
-            name="search"
-            id="search"
-            value={search}
-            onChange={(e) => handleSearch(e.target.value)}
-            placeholder="Search..."
-          />
-        </div>
-
-        <div className="flex items-center gap-4">
-          <div>
-            <div>
-              <label className="mr-2" htmlFor="sortPrice">
-                Sort by price
-              </label>
-              <select
-                name="sortPrice"
-                id="sortPrice"
-                className="border border-cyan-600"
-                onChange={(e) => handleSortByPrice(e.target.value)}
-                defaultValue="all"
-              >
-                <option value="all">All</option>
-                <option value="asc">Low to High</option>
-                <option value="desc">High to Low</option>
-              </select>
-            </div>
-          </div>
-          <div>
-            <label className="mr-2" htmlFor="limitProduct">
-              Limit Product
-            </label>
-            <select
-              name="limitProduct"
-              id="limitProduct"
-              className="border border-cyan-600"
-              onChange={(e) => handleLimit(e.target.value)}
-            >
-              <option value="8">8</option>
-              <option value="16">16</option>
-              <option value="32">32</option>
-              <option value="all">All</option>
-            </select>
-          </div>
-        </div>
+        <ProductViews view={view} setView={setView} />
+        <ProductSearch search={search} handleSearch={handleSearch} />
+        <ProductArrange
+          handleSortByPrice={handleSortByPrice}
+          handleLimit={handleLimit}
+        />
       </div>
       <div
         className={`mt-4 dark:bg-black ${
@@ -204,22 +151,11 @@ const Product = () => {
           <div>No products found!</div>
         )}
       </div>
-      <div className="flex items-center gap-2 mt-4 justify-center">
-        {renderPagination().map((page, index) => (
-          <button
-            key={index}
-            className={`w-10 h-10 border border-black flex items-center justify-center cursor-pointer ${
-              page === (Number.isNaN(currentPage) ? 0 : Math.ceil(currentPage))
-                ? "bg-blue-500 text-white"
-                : "bg-white-200"
-            }`}
-            onClick={() => page !== "..." && handlePage(page)}
-            disabled={page === "..."}
-          >
-            {page === "..." ? "..." : Number(page) + 1}
-          </button>
-        ))}
-      </div>
+      <ProductPagination
+        renderPagination={renderPagination}
+        handlePage={handlePage}
+        currentPage={currentPage}
+      />
     </div>
   );
 };

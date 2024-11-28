@@ -1,40 +1,36 @@
-import { useState } from "react";
-import Footer from "./components/Footer";
-import Header from "./components/Header";
-import Product from "./pages/products/Product";
+import { Route, Routes } from "react-router-dom";
+import NotFound from "./components/NotFound";
+import DbAuth from "./pages/Admin/DbAuth/DbAuth";
+import DbInbox from "./pages/Admin/DbInbox/DbInbox";
+import Pages from "./pages/Admin/DbPages/Pages";
+import DbProduct from "./pages/Admin/DbProduct/DbProduct";
+import DbUser from "./pages/Admin/DbUser/DbUser";
+import RootAdmin from "./pages/Admin/RootAdmin";
+import Home from "./pages/Home/Home";
+import Product from "./pages/Products/Product";
+import ProductDetail from "./pages/Products/ProductDetail/ProductDetail";
+import Root from "./pages/Root";
 
 function App() {
-  const [darkMode, setDarkMode] = useState(false);
-  const [showProduct, setShowProduct] = useState(false);
-
-  const handleDarkMode = () => {
-    setDarkMode((prev) => !prev);
-  };
-
   return (
-    <div className={darkMode ? "dark" : ""}>
-      <Header />
-      <div
-        className="dark:bg-black px-2.5 my-4 py-1 bg-orange-300 w-fit rounded-lg m-auto cursor-pointer hover:bg-orange-500 transition-all ease-in-out duration-200 text-white "
-        onClick={() => setShowProduct(!showProduct)}
-      >
-        {showProduct ? "Hidden" : "Show Product"}
-      </div>
-      {showProduct ? (
-        <Product />
-      ) : (
-        <div className="text-center">Product is empty!!</div>
-      )}
-      <Footer />
-      <div
-        className={`fixed bottom-10 right-10 w-12 h-12 rounded-full font-semibold flex items-center justify-center cursor-pointer ${
-          darkMode ? "bg-blue-300 text-black" : " bg-black text-white"
-        }`}
-        onClick={() => handleDarkMode()}
-      >
-        {darkMode ? "Light" : "Dark"}
-      </div>
-    </div>
+    <>
+      <Routes>
+        <Route path="/" element={<Root />}>
+          <Route index element={<Home />} />
+          <Route path="product" element={<Product />} />
+          <Route path="product/:productId" element={<ProductDetail />} />
+        </Route>
+
+        <Route path="/admin" element={<RootAdmin />}>
+          <Route path="inbox" element={<DbInbox />} />
+          <Route path="product" element={<DbProduct />} />
+          <Route path="user" element={<DbUser />} />
+          <Route path="page" element={<Pages />} />
+          <Route path="auth" element={<DbAuth />} />
+        </Route>
+        <Route path="*" element={<NotFound />} />
+      </Routes>
+    </>
   );
 }
 
