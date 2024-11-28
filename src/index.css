@@ -2,10 +2,44 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  @font-face {
+    font-family: "Roboto";
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url(/fonts/Roboto.woff2) format("woff2");
+  }
+}
+
 /* * {
   @apply transition-colors duration-100;
 } */
 
 .hover-pri {
   @apply btn cursor-pointer bg-transparent btn-sm border-none rounded-md hover:bg-gray-600;
+}
+
+.pagination {
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.pagination li {
+  font-size: 20px;
+}
+.pagination .active .page-link {
+  color: red;
+}
+
+.disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.disabled .page-link {
+  pointer-events: none;
 }

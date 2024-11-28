@@ -62,6 +62,9 @@ const Header = () => {
             <li className="text-xl text-white">
               <NavLink to="/service">Service</NavLink>
             </li>
+            <li className="text-xl text-white">
+              <NavLink to="/admin">Dashboard</NavLink>
+            </li>
           </ul>
         </div>
         <div className="navbar-end">

@@ -17,16 +17,16 @@ const DBHeader = () => {
         </div>
         <div className="ml-4 ">
           <NavLink className="flex items-center gap-2" to="/admin">
-            <div className="w-14 rounded-full">
+            <NavLink to="/" className="w-14 rounded-full">
               <img
                 className="object-contain"
                 src="https://i.pinimg.com/originals/ee/aa/8a/eeaa8a79b2125ca83079faf70edc2361.png"
               />
-            </div>
+            </NavLink>
             <span className="text-white text-2xl">DashBoard</span>
           </NavLink>
         </div>
-        <div className="ml-4">
+        <div className="ml-20">
           <label className="input input-bordered flex items-center gap-2 h-10 w-[380px] bg-second border-gray-500 ">
             <input
               type="text"
