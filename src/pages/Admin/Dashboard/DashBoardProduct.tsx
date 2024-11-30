@@ -29,7 +29,7 @@ const DashBoardProduct = () => {
           style={{ justifyContent: "flex-start" }}
         >
           <span className="text-lg text-text-second font-semibold pl-8">
-            Product
+            Products
           </span>
         </NavLink>
         <NavLink

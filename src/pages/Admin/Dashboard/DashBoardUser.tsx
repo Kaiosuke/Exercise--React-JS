@@ -26,7 +26,7 @@ const DashBoardUser = () => {
           style={{ justifyContent: "flex-start" }}
         >
           <span className="text-lg text-text-second font-semibold pl-8">
-            Users list
+            User list
           </span>
         </NavLink>
         <NavLink
