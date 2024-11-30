@@ -108,7 +108,6 @@ const DbProduct = () => {
               </li>
             </ul>
           </div>
-          <h1 className="text-2xl font-bold ">All products</h1>
           <div className="mt-2 flex  items-center gap-4">
             <label className="input input-bordered flex items-center gap-2 h-10 w-[380px]  bg-second border-gray-500 ">
               <input
