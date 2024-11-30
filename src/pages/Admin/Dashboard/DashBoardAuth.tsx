@@ -13,7 +13,7 @@ const DashBoardAuth = () => {
         onClick={() => setShowAuth(!showAuth)}
       >
         <RiGitRepositoryPrivateFill className="text-xl text-text-second group-hover:text-white" />
-        <span className="text-xl text-text-second font-semibold">
+        <span className="text-lg text-text-second font-semibold">
           Authentication
         </span>
         <FaChevronDown className="text-white ml-auto" />
@@ -28,7 +28,7 @@ const DashBoardAuth = () => {
           className="hover-pri w-full "
           style={{ justifyContent: "flex-start" }}
         >
-          <span className="text-xl text-text-second font-semibold pl-8">
+          <span className="text-lg text-text-second font-semibold pl-8">
             Sign in
           </span>
         </NavLink>
@@ -37,7 +37,7 @@ const DashBoardAuth = () => {
           className="hover-pri w-full "
           style={{ justifyContent: "flex-start" }}
         >
-          <span className="text-xl text-text-second font-semibold pl-8">
+          <span className="text-lg text-text-second font-semibold pl-8">
             Sign up
           </span>
         </NavLink>
@@ -46,7 +46,7 @@ const DashBoardAuth = () => {
           className="hover-pri w-full "
           style={{ justifyContent: "flex-start" }}
         >
-          <span className="text-xl text-text-second font-semibold pl-8">
+          <span className="text-lg text-text-second font-semibold pl-8">
             Forgot password
           </span>
         </NavLink>
@@ -55,7 +55,7 @@ const DashBoardAuth = () => {
           className="hover-pri w-full "
           style={{ justifyContent: "flex-start" }}
         >
-          <span className="text-xl text-text-second font-semibold pl-8">
+          <span className="text-lg text-text-second font-semibold pl-8">
             Reset password
           </span>
         </NavLink>
@@ -64,7 +64,7 @@ const DashBoardAuth = () => {
           className="hover-pri w-full "
           style={{ justifyContent: "flex-start" }}
         >
-          <span className="text-xl text-text-second font-semibold pl-8">
+          <span className="text-lg text-text-second font-semibold pl-8">
             Profile lock
           </span>
         </NavLink>

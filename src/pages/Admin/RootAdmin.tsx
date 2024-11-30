@@ -7,9 +7,7 @@ const RootAdmin = () => {
     <>
       <DBHeader />
       <div className="flex pt-14">
-        <div className="flex-[1_0_auto] max-w-[20%] bg-primary h-full border-t border-r border-white py-10">
-          <Dashboard />
-        </div>
+        <Dashboard />
         <Outlet />
       </div>
     </>

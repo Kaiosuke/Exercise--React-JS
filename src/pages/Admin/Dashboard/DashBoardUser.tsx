@@ -12,7 +12,7 @@ const DashBoardUser = () => {
         onClick={() => setShowUser(!showUser)}
       >
         <FaUser className="text-xl text-text-second group-hover:text-white" />
-        <span className="text-xl text-text-second font-semibold">Users</span>
+        <span className="text-lg text-text-second font-semibold">Users</span>
         <FaChevronDown className="text-white ml-auto" />
       </div>
       <div
@@ -25,7 +25,7 @@ const DashBoardUser = () => {
           className="hover-pri w-full "
           style={{ justifyContent: "flex-start" }}
         >
-          <span className="text-xl text-text-second font-semibold pl-8">
+          <span className="text-lg text-text-second font-semibold pl-8">
             Users list
           </span>
         </NavLink>
@@ -34,7 +34,7 @@ const DashBoardUser = () => {
           className="hover-pri w-full "
           style={{ justifyContent: "flex-start" }}
         >
-          <span className="text-xl text-text-second font-semibold pl-8">
+          <span className="text-lg text-text-second font-semibold pl-8">
             Profile
           </span>
         </NavLink>
@@ -43,7 +43,7 @@ const DashBoardUser = () => {
           className="hover-pri w-full "
           style={{ justifyContent: "flex-start" }}
         >
-          <span className="text-xl text-text-second font-semibold pl-8">
+          <span className="text-lg text-text-second font-semibold pl-8">
             Feed
           </span>
         </NavLink>
@@ -52,7 +52,7 @@ const DashBoardUser = () => {
           className="hover-pri w-full "
           style={{ justifyContent: "flex-start" }}
         >
-          <span className="text-xl text-text-second font-semibold pl-8">
+          <span className="text-lg text-text-second font-semibold pl-8">
             Settings
           </span>
         </NavLink>

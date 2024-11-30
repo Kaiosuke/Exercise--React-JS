@@ -1,11 +1,11 @@
 import { useEffect, useState } from "react";
 
-import { getApi } from "../../requestApi";
-import ProductList from "./ProductList";
-import ProductViews from "./ProductViews";
-import ProductSearch from "./ProductSearch";
+import { getAllProducts } from "../../api/requestApi";
 import ProductArrange from "./ProductArrange";
+import ProductList from "./ProductList";
 import ProductPagination from "./ProductPagination";
+import ProductSearch from "./ProductSearch";
+import ProductViews from "./ProductViews";
 
 interface Products {
   id: number;
@@ -17,7 +17,6 @@ interface Products {
 }
 
 const Product = () => {
-  const path = "https://dummyjson.com";
   const [products, setProducts] = useState<Products[]>([]);
   const [view, setView] = useState("grid");
   const [limit, setLimit] = useState(8);
@@ -41,8 +40,8 @@ const Product = () => {
     let ignore = false;
     (async () => {
       try {
-        const dataList = await getApi(
-          path,
+        const dataList = await getAllProducts(
+          "products",
           debouncedSearch,
           limit,
           skip,

@@ -19,11 +19,9 @@ const DbProductList = ({
   product,
 }: PropsType) => {
   return (
-    <tr className="font-bold text-lg">
+    <tr className="font-bold text-base">
       <th>
-        <label>
-          <input type="checkbox" className="checkbox border border-second" />
-        </label>
+        <input type="checkbox" className="checkbox border-white" />
       </th>
       <td>{product.title}</td>
       <td>{product.category}</td>
@@ -35,14 +33,12 @@ const DbProductList = ({
           onClick={() => onShowUpdate(product.id)}
         >
           <FaEdit />
-          Edit item
         </button>
         <button
           className="btn btn-error text-white flex items-center text-base"
           onClick={() => onShowMdDelete(product.id)}
         >
           <MdDelete />
-          Delete item
         </button>
       </th>
     </tr>

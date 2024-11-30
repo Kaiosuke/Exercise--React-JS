@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { getProduct } from "../../../requestApi";
+import { getProduct } from "../../../api/requestApi";
 
 interface Product {
   thumbnail: string;
@@ -14,7 +14,7 @@ const ProductDetail = () => {
   const { id } = useParams();
   useEffect(() => {
     (async () => {
-      const data = await getProduct(Number(id));
+      const data = await getProduct("products", Number(id));
       console.log(data);
       setProduct(data);
     })();

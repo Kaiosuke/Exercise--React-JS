@@ -10,7 +10,7 @@ import {
   deleteData,
   getDataList,
   updateData,
-} from "../../../requestApi";
+} from "../../../api/requestApi";
 import DbProductList from "./DbProductList";
 
 import DbModelAdd from "../../../components/DbModelAdd";
@@ -40,9 +40,11 @@ const DbProduct = () => {
     refAdd.current && refAdd.current.showModal();
   };
 
-  const handleAdd = (product: any) => {
-    setStateProduct(!stateProduct);
-    addData("products", product);
+  const handleAdd = async (product: any) => {
+    const isAdd = addData("products", product);
+    if (await isAdd) {
+      setStateProduct(!stateProduct);
+    }
   };
 
   const handleShowUpdate = (id: number) => {
@@ -50,16 +52,18 @@ const DbProduct = () => {
     refUpdate.current && refUpdate.current.showModal();
   };
 
-  const handleUpdate = (product: any) => {
+  const handleUpdate = async (product: any) => {
     if (productId) {
-      const newProducts: any = products.map((item: { id: number }) => {
-        if (item.id === product.id) {
-          return { ...product };
-        }
-        return { ...item };
-      });
-      setProducts(newProducts);
-      updateData("products", productId, product);
+      const isUpdate = updateData("products", productId, product);
+      if (await isUpdate) {
+        const newProducts: any = products.map((item: { id: number }) => {
+          if (item.id === product.id) {
+            return { ...product };
+          }
+          return { ...item };
+        });
+        setProducts(newProducts);
+      }
     }
   };
 
@@ -68,13 +72,15 @@ const DbProduct = () => {
     refDelete.current && refDelete.current.showModal();
   };
 
-  const handleDelete = () => {
+  const handleDelete = async () => {
     if (productId) {
-      const newProducts = products.filter((product: { id: number }) => {
-        return product.id !== productId;
-      });
-      setProducts(newProducts);
-      deleteData("products", productId);
+      const isDelete = deleteData("products", productId);
+      if (await isDelete) {
+        const newProducts = products.filter((product: { id: number }) => {
+          return product.id !== productId;
+        });
+        setProducts(newProducts);
+      }
     }
   };
 
@@ -87,7 +93,7 @@ const DbProduct = () => {
 
   return (
     <>
-      <div className="flex-[1_0_auto] ] bg-primary py-10 text-white">
+      <div className="flex-[1_0_auto] ] bg-primary pt-10 text-white">
         <div className="px-4">
           <div className="breadcrumbs text-lg  font-semibold">
             <ul>
@@ -102,8 +108,8 @@ const DbProduct = () => {
               </li>
             </ul>
           </div>
-          <h1 className="text-2xl font-bold mt-4">All products</h1>
-          <div className="mt-4 flex  items-center gap-4">
+          <h1 className="text-2xl font-bold ">All products</h1>
+          <div className="mt-2 flex  items-center gap-4">
             <label className="input input-bordered flex items-center gap-2 h-10 w-[380px]  bg-second border-gray-500 ">
               <input
                 type="text"
@@ -125,21 +131,21 @@ const DbProduct = () => {
             </label>
             <div className="flex items-center">
               <Link className="hover-pri" to={"#!"}>
-                <IoIosSettings className="text-2xl text-white" />
+                <IoIosSettings className="text-xl text-white" />
               </Link>
               <Link className="hover-pri" to={"#!"}>
-                <FaTrash className="text-2xl text-white" />
+                <FaTrash className="text-xl text-white" />
               </Link>
               <Link className="hover-pri" to={"#!"}>
-                <ImBookmarks className="text-2xl text-white" />
+                <ImBookmarks className="text-xl text-white" />
               </Link>
               <Link className="hover-pri" to={"#!"}>
-                <CiMenuKebab className="text-2xl text-white" />
+                <CiMenuKebab className="text-xl text-white" />
               </Link>
             </div>
             <div className="ml-auto">
               <button
-                className="btn btn-primary text-white flex items-center text-lg"
+                className="btn btn-primary text-white flex items-center text-base"
                 onClick={() => handleShowAddProduct()}
               >
                 <FaPlus />
@@ -148,17 +154,12 @@ const DbProduct = () => {
             </div>
           </div>
         </div>
-        <div className="mt-4 overflow-y-auto h-[700px]">
+        <div className="mt-4 overflow-y-auto max-h-[440px]">
           <table className="table">
             <thead className="bg-second">
               <tr className=" text-base text-text-second">
                 <th>
-                  <label>
-                    <input
-                      type="checkbox"
-                      className="checkbox border border-gray-600"
-                    />
-                  </label>
+                  <input type="checkbox" className="checkbox border-white" />
                 </th>
                 <th>PRODUCT NAME</th>
                 <th>CATEGORY</th>
@@ -179,26 +180,25 @@ const DbProduct = () => {
                 ))}
             </tbody>
           </table>
-          <div className="flex">
-            <ReactPaginate
-              previousLabel={<GrFormPrevious />}
-              nextLabel={<GrFormNext />}
-              breakLabel={"..."}
-              breakClassName={"break-me"}
-              pageCount={Math.ceil(products.length / itemsPerPage)}
-              marginPagesDisplayed={2}
-              pageRangeDisplayed={5}
-              onPageChange={handlePageClick}
-              activeClassName={"active"}
-              pageLinkClassName={"page-link"}
-              containerClassName={"pagination"}
-            />
-          </div>
+        </div>
+        <div className="flex">
+          <ReactPaginate
+            previousLabel={<GrFormPrevious />}
+            nextLabel={<GrFormNext />}
+            breakLabel={"..."}
+            breakClassName={"break-me"}
+            pageCount={Math.ceil(products.length / itemsPerPage)}
+            marginPagesDisplayed={2}
+            pageRangeDisplayed={5}
+            onPageChange={handlePageClick}
+            activeClassName={"active"}
+            pageLinkClassName={"page-link"}
+            containerClassName={"pagination"}
+          />
         </div>
       </div>
       <DbModelDelete ref={refDelete} name={"product"} onDelete={handleDelete} />
       <DbModelAdd ref={refAdd} name={"product"} onAdd={handleAdd} />
-
       <DbModelUpdate
         ref={refUpdate}
         name={"product"}

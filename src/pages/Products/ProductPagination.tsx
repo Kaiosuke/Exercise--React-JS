@@ -7,7 +7,6 @@ const ProductPagination = ({
   currentPage: number | string;
   handlePage: (page: number | string) => void;
 }) => {
-  console.log(renderPagination);
   return (
     <div className="flex justify-center mt-4">
       <div className="join m-auto">

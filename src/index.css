@@ -15,6 +15,10 @@
 /* * {
   @apply transition-colors duration-100;
 } */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #797f87 #1f2937;
+}
 
 .hover-pri {
   @apply btn cursor-pointer bg-transparent btn-sm border-none rounded-md hover:bg-gray-600;

@@ -1,5 +1,5 @@
 import { forwardRef, useEffect, useState } from "react";
-import { getData } from "../requestApi";
+import { getData } from "../api/requestApi";
 import { z } from "zod";
 import { FormProvider, useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -21,7 +21,7 @@ const contactForm = z.object({
     title: z.string().trim().min(1, "Please fill in title"),
     category: z.string().trim().min(1, "Please fill in category"),
     stock: z.number().min(1, "Please enter quantity"),
-    price: z.number().min(1, "Please enter price"),
+    price: z.number().min(0.01, "Please enter price"),
   }),
 });
 
@@ -34,29 +34,23 @@ const DbModelUpdate = forwardRef<HTMLDialogElement, DbModelUpdateProps>(
       stock: 0,
     });
 
-    useEffect(() => {
-      (async () => {
-        if (id) {
-          const data = await getData("products", id);
-          setProduct(data);
-        }
-      })();
-    }, [id]);
-
     const methods = useForm({
       resolver: zodResolver(contactForm),
       defaultValues: {
         info: product,
       },
     });
-
     useEffect(() => {
-      if (product) {
-        methods.reset({
-          info: product,
-        });
-      }
-    }, [product, methods]);
+      (async () => {
+        if (id) {
+          const data = await getData("products", id);
+          setProduct(data);
+          methods.reset({
+            info: data,
+          });
+        }
+      })();
+    }, [id]);
 
     const handleClose = () => {
       if (ref && "current" in ref && ref.current) {
@@ -132,12 +126,12 @@ const DbModelUpdate = forwardRef<HTMLDialogElement, DbModelUpdateProps>(
                     />
                   </label>
                   <span className="text-red-500 text-sm">
-                    {methods.formState.errors.info?.stock?.message}
+                    {methods.formState.errors.info?.price?.message}
                   </span>
                 </div>
               </div>
               <div className="flex items-center  gap-4">
-                <button className="btn btn-primary">Update Product</button>
+                <button className="btn btn-primary">Update {name}</button>
                 <div className="btn" onClick={() => handleClose()}>
                   close
                 </div>

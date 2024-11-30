@@ -20,10 +20,10 @@ const DBHeader = () => {
             <NavLink to="/" className="w-14 rounded-full">
               <img
                 className="object-contain"
-                src="https://i.pinimg.com/originals/ee/aa/8a/eeaa8a79b2125ca83079faf70edc2361.png"
+                src="https://img.pikbest.com/origin/10/50/46/10ppIkbEsTtgD.png!bw700"
               />
             </NavLink>
-            <span className="text-white text-2xl">DashBoard</span>
+            <span className="text-white text-2xl">The Store</span>
           </div>
         </div>
         <div className="ml-20">
@@ -63,10 +63,12 @@ const DBHeader = () => {
           </div>
           <div className="avatar ml-2">
             <div className="w-8 rounded-full">
-              <img
-                src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp"
-                alt="Tailwind-CSS-Avatar-component"
-              />
+              <NavLink to="#!">
+                <img
+                  src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp"
+                  alt="Tailwind-CSS-Avatar-component"
+                />
+              </NavLink>
             </div>
           </div>
         </div>

@@ -10,6 +10,7 @@ import Home from "./pages/Home/Home";
 import Root from "./pages/Root";
 import Products from "./pages/Products/Products";
 import ProductDetail from "./pages/Products/ProductDetail/ProductDetail";
+import Service from "./pages/Services/Service";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
           <Route index element={<Home />} />
           <Route path="products" element={<Products />} />
           <Route path="products/:id" element={<ProductDetail />} />
+          <Route path="services" element={<Service />} />
         </Route>
         <Route path="/admin" element={<RootAdmin />}>
           <Route path="inbox" element={<DbInbox />} />

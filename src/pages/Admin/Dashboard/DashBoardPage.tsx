@@ -13,7 +13,7 @@ const DashBoardPage = () => {
         onClick={() => setShowPage(!showPage)}
       >
         <SiPagerduty className="text-xl text-text-second group-hover:text-white" />
-        <span className="text-xl text-text-second font-semibold">Pages</span>
+        <span className="text-lg text-text-second font-semibold">Pages</span>
         <FaChevronDown className="text-white ml-auto" />
       </div>
       <div
@@ -26,7 +26,7 @@ const DashBoardPage = () => {
           className="hover-pri w-full "
           style={{ justifyContent: "flex-start" }}
         >
-          <span className="text-xl text-text-second font-semibold pl-8">
+          <span className="text-lg text-text-second font-semibold pl-8">
             Pricing
           </span>
         </NavLink>
@@ -35,7 +35,7 @@ const DashBoardPage = () => {
           className="hover-pri w-full "
           style={{ justifyContent: "flex-start" }}
         >
-          <span className="text-xl text-text-second font-semibold pl-8">
+          <span className="text-lg text-text-second font-semibold pl-8">
             Maintenance
           </span>
         </NavLink>
@@ -44,7 +44,7 @@ const DashBoardPage = () => {
           className="hover-pri w-full "
           style={{ justifyContent: "flex-start" }}
         >
-          <span className="text-xl text-text-second font-semibold pl-8">
+          <span className="text-lg text-text-second font-semibold pl-8">
             404 not found
           </span>
         </NavLink>
@@ -53,7 +53,7 @@ const DashBoardPage = () => {
           className="hover-pri w-full "
           style={{ justifyContent: "flex-start" }}
         >
-          <span className="text-xl text-text-second font-semibold pl-8">
+          <span className="text-lg text-text-second font-semibold pl-8">
             500 server error
           </span>
         </NavLink>

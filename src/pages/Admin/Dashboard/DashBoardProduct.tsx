@@ -12,8 +12,8 @@ const DashBoardProduct = () => {
         className="flex items-center hover-pri w-full group"
         onClick={() => setShowProduct(!showProduct)}
       >
-        <MdGamepad className="text-2xl text-text-second group-hover:text-white" />
-        <span className="text-xl text-text-second font-semibold">
+        <MdGamepad className="text-xl text-text-second group-hover:text-white" />
+        <span className="text-lg text-text-second font-semibold">
           E-commerce
         </span>
         <FaChevronDown className="text-white ml-auto" />
@@ -28,7 +28,7 @@ const DashBoardProduct = () => {
           className="hover-pri w-full "
           style={{ justifyContent: "flex-start" }}
         >
-          <span className="text-xl text-text-second font-semibold pl-8">
+          <span className="text-lg text-text-second font-semibold pl-8">
             Product
           </span>
         </NavLink>
@@ -37,7 +37,7 @@ const DashBoardProduct = () => {
           className="hover-pri w-full "
           style={{ justifyContent: "flex-start" }}
         >
-          <span className="text-xl text-text-second font-semibold pl-8">
+          <span className="text-lg text-text-second font-semibold pl-8">
             Billing
           </span>
         </NavLink>
@@ -46,7 +46,7 @@ const DashBoardProduct = () => {
           className="hover-pri w-full "
           style={{ justifyContent: "flex-start" }}
         >
-          <span className="text-xl text-text-second font-semibold pl-8">
+          <span className="text-lg text-text-second font-semibold pl-8">
             Invoice
           </span>
         </NavLink>

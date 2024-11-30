@@ -47,6 +47,14 @@ const DbModelAdd = forwardRef<HTMLDialogElement, DbModelAddProps>(
 
     const handleGetData = (data: FormDataProps) => {
       onAdd(data);
+      methods.reset({
+        info: {
+          title: "",
+          category: "",
+          stock: 0,
+          price: 0,
+        },
+      });
       handleClose();
     };
 
@@ -112,12 +120,12 @@ const DbModelAdd = forwardRef<HTMLDialogElement, DbModelAddProps>(
                     />
                   </label>
                   <span className="text-red-500 text-sm">
-                    {methods.formState.errors.info?.stock?.message}
+                    {methods.formState.errors.info?.price?.message}
                   </span>
                 </div>
               </div>
               <div className="flex items-center  gap-4">
-                <button className="btn btn-primary">Add Product</button>
+                <button className="btn btn-primary">Add {name}</button>
                 <div className="btn" onClick={() => handleClose()}>
                   close
                 </div>
