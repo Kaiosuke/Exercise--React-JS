@@ -1,18 +1,18 @@
 import { useState } from "react";
 
 import { useDispatch, useSelector } from "react-redux";
-import useAppContext from "../../hooks/useAppContext";
+import useAppContext from "@/hooks/useAppContext";
 import {
   limitProducts,
   searchProducts,
   sortPriceProducts,
-} from "../../redux/slices/productsSlice";
+} from "@/redux/slices/productsSlice";
 import ProductArrange from "./ProductArrange";
 import ProductList from "./ProductList";
 import ProductSearch from "./ProductSearch";
 import ProductViews from "./ProductViews";
-import { productsSelector } from "../../redux/selector";
-import Loading from "../../components/Loading";
+import { productsSelector } from "@/redux/selector";
+import Loading from "@/components/Loading";
 
 const Product = () => {
   const [view, setView] = useState("grid");
