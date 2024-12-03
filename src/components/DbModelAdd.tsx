@@ -106,7 +106,7 @@ const DbModelAdd = forwardRef<HTMLDialogElement, DbModelAddProps>(
                 </div>
               </div>
               <div className="flex items-center  gap-4">
-                <button className="btn btn-primary">Update {name}</button>
+                <button className="btn btn-primary">Add {name}</button>
                 <div className="btn" onClick={() => handleClose()}>
                   close
                 </div>
