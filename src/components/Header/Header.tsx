@@ -1,7 +1,7 @@
+import { authSelector } from "@/redux/selector";
+import { logoutSuccess } from "@/redux/slices/authSlice";
 import { useDispatch, useSelector } from "react-redux";
 import { NavLink } from "react-router-dom";
-import { authSelector } from "../../redux/selector";
-import { logoutSuccess } from "../../redux/slices/authSlice";
 
 const Header = () => {
   const { currentUser } = useSelector(authSelector);

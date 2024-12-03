@@ -37,20 +37,8 @@ const Product = () => {
   };
 
   const handleSortByPrice = (value: string) => {
-    if (value === "all") {
-      dispatch(sortPriceProducts(""));
-    } else {
-      dispatch(sortPriceProducts(value));
-    }
+    dispatch(sortPriceProducts(value));
   };
-
-  if (loading) {
-    return (
-      <div className="text-center h-screen">
-        <Loading />
-      </div>
-    );
-  }
 
   return (
     <div className="max-w-[1200px] m-auto">
@@ -62,21 +50,27 @@ const Product = () => {
           handleLimit={handleLimit}
         />
       </div>
-      <div
-        className={`mt-4 dark:bg-black ${
-          view === "grid"
-            ? "grid grid-cols-4 gap-4 mt-4 "
-            : "flex flex-col gap-4"
-        }`}
-      >
-        {products.length > 0 ? (
-          products.map((data, index) => (
-            <ProductList key={index} data={data} view={view} />
-          ))
-        ) : (
-          <div>No products found!</div>
-        )}
-      </div>
+      {loading ? (
+        <div className="text-center mt-4">
+          <Loading />
+        </div>
+      ) : (
+        <div
+          className={`mt-4 dark:bg-black ${
+            view === "grid"
+              ? "grid grid-cols-4 gap-4 mt-4 "
+              : "flex flex-col gap-4"
+          }`}
+        >
+          {products.length > 0 ? (
+            products.map((data, index) => (
+              <ProductList key={index} data={data} view={view} />
+            ))
+          ) : (
+            <div>No products found!</div>
+          )}
+        </div>
+      )}
     </div>
   );
 };

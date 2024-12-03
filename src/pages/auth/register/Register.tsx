@@ -1,8 +1,8 @@
 import { zodResolver } from "@hookform/resolvers/zod";
 import { FormProvider, useForm } from "react-hook-form";
 import { NavLink, useNavigate } from "react-router-dom";
-import { register } from "../../../api/requestApi";
-import { registerForm } from "../../../reactHookForm";
+import { register } from "@/api/requestApi";
+import { registerForm } from "@/reactHookForm";
 
 const Register = () => {
   const methods = useForm({

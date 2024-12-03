@@ -1,7 +1,7 @@
+import { productsForm } from "@/reactHookForm";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { forwardRef } from "react";
 import { FormProvider, useForm } from "react-hook-form";
-import { productsForm } from "../reactHookForm";
 
 interface DbModelAddProps {
   name: string;

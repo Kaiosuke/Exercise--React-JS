@@ -1,9 +1,9 @@
+import { getAllProducts } from "@/api/requestApi";
+import AppContext from "@/context/AppContext";
+import { productsSelector } from "@/redux/selector";
+import { AppDispatch } from "@/redux/store";
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { getAllProducts } from "../api/requestApi";
-import AppContext from "../context/AppContext";
-import { productsSelector } from "../redux/selector";
-import { AppDispatch } from "../redux/store";
 
 const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const dispatch = useDispatch<AppDispatch>();

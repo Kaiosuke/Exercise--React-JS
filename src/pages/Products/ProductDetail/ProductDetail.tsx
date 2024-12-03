@@ -1,6 +1,6 @@
+import { getProduct } from "@/api/requestApi";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { getProduct } from "../../../api/requestApi";
 
 interface Product {
   thumbnail: string;
@@ -11,7 +11,9 @@ interface Product {
 
 const ProductDetail = () => {
   const [product, setProduct] = useState<Product>();
+  const [loading, setLoading] = useState(true);
   const { id } = useParams();
+
   useEffect(() => {
     (async () => {
       const data = await getProduct("products", Number(id));
@@ -25,11 +27,21 @@ const ProductDetail = () => {
 
   const { thumbnail, title, price, description } = product;
 
+  const handleImageLoad = () => {
+    setLoading(false);
+  };
+
   return (
     <div>
-      <div className="card lg:card-side bg-base-100 shadow-xl">
+      <div className="card lg:card-side bg-base-100 shadow-xl p-4">
         <figure>
-          <img src={thumbnail} alt={title} />
+          {loading && <div className="skeleton h-[300px] w-[300px]"></div>}
+          <img
+            src={thumbnail}
+            alt={title}
+            onLoad={handleImageLoad}
+            className={`${loading ? "hidden" : "block"}`}
+          />
         </figure>
         <div className="card-body">
           <h2 className="card-title">{title}</h2>

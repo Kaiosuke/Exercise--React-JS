@@ -1,5 +1,5 @@
+import { getDataList } from "@/api/requestApi";
 import { createSlice } from "@reduxjs/toolkit";
-import { getDataList } from "../../api/requestApi";
 
 interface DataStateType {
   dataList: [];

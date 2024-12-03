@@ -1,3 +1,6 @@
+import { productsSelector } from "@/redux/selector";
+import { useSelector } from "react-redux";
+
 const ProductArrange = ({
   handleSortByPrice,
   handleLimit,
@@ -5,14 +8,17 @@ const ProductArrange = ({
   handleSortByPrice: (value: string) => void;
   handleLimit: (value: string) => void;
 }) => {
+  const { order, limit } = useSelector(productsSelector);
+
   return (
     <div className="flex items-center gap-1">
       <select
         className="select select-info w-full max-w-xs"
         onChange={(e) => handleSortByPrice(e.target.value)}
+        defaultValue={order}
       >
         <option disabled>Sort by Price</option>
-        <option value="all">All</option>
+        <option value="">All</option>
         <option value="asc">Low to High</option>
         <option value="desc">High to Low</option>
       </select>
@@ -20,6 +26,7 @@ const ProductArrange = ({
         <select
           className="select select-info max-w-[300px]"
           onChange={(e) => handleLimit(e.target.value)}
+          defaultValue={limit}
         >
           <option disabled>Limit Product</option>
           <option value="8">8</option>

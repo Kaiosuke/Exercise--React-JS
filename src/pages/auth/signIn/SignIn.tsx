@@ -1,11 +1,11 @@
 import { zodResolver } from "@hookform/resolvers/zod";
 import { FormProvider, useForm } from "react-hook-form";
 import { NavLink, useNavigate } from "react-router-dom";
-import { loginForm } from "../../../reactHookForm";
-import { login } from "../../../api/requestApi";
 import { useDispatch, useSelector } from "react-redux";
-import { AppDispatch } from "../../../redux/store";
-import { authSelector } from "../../../redux/selector";
+import { authSelector } from "@/redux/selector";
+import { AppDispatch } from "@/redux/store";
+import { login } from "@/api/requestApi";
+import { loginForm } from "@/reactHookForm";
 
 const SignIn = () => {
   const methods = useForm({

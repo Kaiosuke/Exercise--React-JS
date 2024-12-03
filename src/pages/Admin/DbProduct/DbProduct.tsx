@@ -4,23 +4,18 @@ import { FaHome, FaPlus, FaTrash } from "react-icons/fa";
 import { ImBookmarks } from "react-icons/im";
 import { IoIosSettings } from "react-icons/io";
 import { Link } from "react-router-dom";
-import {
-  addData,
-  deleteData,
-  getDataList,
-  updateData,
-} from "../../../api/requestApi";
-import DbModelDelete from "../../../components/DbModelDelete";
+import { addData, deleteData, getDataList, updateData } from "@/api/requestApi";
 import DbProductList from "./DbProductList";
 
 import { GrFormNext, GrFormPrevious } from "react-icons/gr";
 import ReactPaginate from "react-paginate";
 import { useDispatch, useSelector } from "react-redux";
-import DbModelAdd from "../../../components/DbModelAdd";
-import DbModelUpdate from "../../../components/DbModelUpdate";
-import { dataListSelector } from "../../../redux/selector";
-import { AppDispatch } from "../../../redux/store";
-import Loading from "../../../components/Loading";
+import { AppDispatch } from "@/redux/store";
+import { dataListSelector } from "@/redux/selector";
+import Loading from "@/components/Loading";
+import DbModelDelete from "@/components/DbModelDelete";
+import DbModelAdd from "@/components/DbModelAdd";
+import DbModelUpdate from "@/components/DbModelUpdate";
 
 const DbProduct = () => {
   const [stateProduct, setStateProduct] = useState(false);

@@ -2,8 +2,8 @@ import { Outlet, useNavigate } from "react-router-dom";
 import Dashboard from "./Dashboard/Dashboard";
 import DBHeader from "./DBHeader";
 import { useSelector } from "react-redux";
-import { authSelector } from "../../redux/selector";
 import { useEffect } from "react";
+import { authSelector } from "@/redux/selector";
 
 const RootAdmin = () => {
   const { currentUser } = useSelector(authSelector);

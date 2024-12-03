@@ -39,9 +39,7 @@ const ProductList: React.FC<{ data: Products; view: string }> = ({
                 src={thumbnail}
                 alt={title}
                 onLoad={handleImageLoad}
-                className={`transition-opacity duration-300 ${
-                  loading ? "opacity-0" : "opacity-100"
-                }`}
+                className={`${loading ? "hidden" : "block"}`}
               />
             </NavLink>
           </figure>

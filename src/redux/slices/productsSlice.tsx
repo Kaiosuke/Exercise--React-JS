@@ -1,5 +1,5 @@
+import { getAllProducts } from "@/api/requestApi";
 import { createSlice } from "@reduxjs/toolkit";
-import { getAllProducts } from "../../api/requestApi";
 
 interface ProductsState {
   products: string[];
@@ -38,11 +38,13 @@ const productsSlice = createSlice({
       state.skip = 0;
     },
     sortPriceProducts: (state, action) => {
-      state.sortBy = "";
-      if (action.payload) {
-        state.sortBy = "price";
+      state.sortBy = "price";
+      if (action.payload === "") {
+        state.sortBy = "";
+        state.order = "";
+      } else {
+        state.order = action.payload;
       }
-      state.order = action.payload;
     },
   },
   extraReducers: (builder) => {

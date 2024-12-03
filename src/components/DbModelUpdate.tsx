@@ -1,8 +1,8 @@
+import { getData } from "@/api/requestApi";
+import { productsForm } from "@/reactHookForm";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { forwardRef, useEffect, useState } from "react";
 import { FormProvider, useForm } from "react-hook-form";
-import { getData } from "../api/requestApi";
-import { productsForm } from "../reactHookForm";
 
 interface DataProps {
   title: string;

@@ -1,7 +1,7 @@
 import { Outlet, useNavigate } from "react-router-dom";
-import { authSelector } from "../../redux/selector";
 import { useSelector } from "react-redux";
 import { useEffect } from "react";
+import { authSelector } from "@/redux/selector";
 
 const LayoutAuth = () => {
   const { currentUser } = useSelector(authSelector);
