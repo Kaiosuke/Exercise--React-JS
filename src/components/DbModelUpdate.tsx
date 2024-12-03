@@ -60,7 +60,7 @@ const DbModelUpdate = forwardRef<HTMLDialogElement, DbModelUpdateProps>(
     return (
       <dialog ref={ref} className="modal text-white">
         <div className="modal-box bg-second">
-          <h3 className="font-bold text-2xl">Add {name}</h3>
+          <h3 className="font-bold text-2xl">Update {name}</h3>
           <FormProvider {...methods}>
             <form
               method="dialog"
