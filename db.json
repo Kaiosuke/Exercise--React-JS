@@ -1747,6 +1747,20 @@
       "price": 321,
       "stock": 321,
       "id": 46
+    },
+    {
+      "title": "dá321312",
+      "category": "123",
+      "price": 231,
+      "stock": 321,
+      "id": 47
+    },
+    {
+      "title": "đasadas",
+      "category": "1232",
+      "price": 1312,
+      "stock": 3232,
+      "id": 48
     }
   ]
 }

@@ -12,6 +12,7 @@ import ProductList from "./ProductList";
 import ProductSearch from "./ProductSearch";
 import ProductViews from "./ProductViews";
 import { productsSelector } from "../../redux/selector";
+import Loading from "../../components/Loading";
 
 const Product = () => {
   const [view, setView] = useState("grid");
@@ -44,7 +45,11 @@ const Product = () => {
   };
 
   if (loading) {
-    return <div>Loading...</div>;
+    return (
+      <div className="text-center h-screen">
+        <Loading />
+      </div>
+    );
   }
 
   return (

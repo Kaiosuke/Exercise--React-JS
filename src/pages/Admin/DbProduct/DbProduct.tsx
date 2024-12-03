@@ -20,6 +20,7 @@ import DbModelAdd from "../../../components/DbModelAdd";
 import DbModelUpdate from "../../../components/DbModelUpdate";
 import { dataListSelector } from "../../../redux/selector";
 import { AppDispatch } from "../../../redux/store";
+import Loading from "../../../components/Loading";
 
 const DbProduct = () => {
   const [stateProduct, setStateProduct] = useState(false);
@@ -101,7 +102,11 @@ const DbProduct = () => {
   };
 
   if (isLoading) {
-    return <div>Loading ...</div>;
+    return (
+      <div className="text-center h-screen">
+        <Loading />
+      </div>
+    );
   }
 
   return (

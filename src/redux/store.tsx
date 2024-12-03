@@ -10,7 +10,6 @@ import {
   REGISTER,
 } from "redux-persist";
 import rootReducer from "./rootReducer";
-// @ts-ignore
 import storage from "redux-persist/lib/storage";
 
 const persistConfig = {
@@ -19,7 +18,6 @@ const persistConfig = {
 };
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);
-
 const store = configureStore({
   reducer: persistedReducer,
   middleware: (getDefaultMiddleware) =>

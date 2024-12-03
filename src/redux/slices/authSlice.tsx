@@ -50,19 +50,6 @@ const authSlice = createSlice({
       state.login.isLoading = false;
       state.login.error = "Login Failed";
     },
-    registerStart: (state) => {
-      state.register.isLoading = true;
-    },
-    registerSuccess: (state) => {
-      state.register.isLoading = false;
-      state.register.success = true;
-      state.register.error = null;
-    },
-    registerFailed: (state) => {
-      state.register.isLoading = false;
-      state.register.success = false;
-      state.register.error = "Register Failed";
-    },
     logoutStart: (state) => {
       state.login.isLoading = true;
     },
@@ -84,9 +71,6 @@ export const {
   loginStart,
   loginSuccess,
   loginFailed,
-  registerStart,
-  registerSuccess,
-  registerFailed,
   logoutStart,
   logoutSuccess,
   logoutFailed,
