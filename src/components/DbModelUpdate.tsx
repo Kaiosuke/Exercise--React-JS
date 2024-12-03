@@ -3,6 +3,8 @@ import { getData } from "../api/requestApi";
 import { z } from "zod";
 import { FormProvider, useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
+import useAppContext from "../hooks/useAppContext";
+import { productsForm } from "../reactHookForm";
 
 interface DataProps {
   title: string;
@@ -16,15 +18,6 @@ interface DbModelUpdateProps {
   name: string;
 }
 
-const contactForm = z.object({
-  info: z.object({
-    title: z.string().trim().min(1, "Please fill in title"),
-    category: z.string().trim().min(1, "Please fill in category"),
-    stock: z.number().min(1, "Please enter quantity"),
-    price: z.number().min(0.01, "Please enter price"),
-  }),
-});
-
 const DbModelUpdate = forwardRef<HTMLDialogElement, DbModelUpdateProps>(
   ({ name, id, onUpdate }, ref) => {
     const [product, setProduct] = useState({
@@ -35,19 +28,21 @@ const DbModelUpdate = forwardRef<HTMLDialogElement, DbModelUpdateProps>(
     });
 
     const methods = useForm({
-      resolver: zodResolver(contactForm),
+      resolver: zodResolver(productsForm),
       defaultValues: {
-        info: product,
+        title: "",
+        category: "",
+        price: 0,
+        stock: 0,
       },
     });
+
     useEffect(() => {
       (async () => {
         if (id) {
           const data = await getData("products", id);
           setProduct(data);
-          methods.reset({
-            info: data,
-          });
+          methods.reset(data);
         }
       })();
     }, [id]);
@@ -73,7 +68,7 @@ const DbModelUpdate = forwardRef<HTMLDialogElement, DbModelUpdateProps>(
               method="dialog"
               className="mt-4 flex flex-col gap-4"
               onSubmit={methods.handleSubmit((data) => {
-                handleGetData(data.info);
+                handleGetData(data);
               })}
             >
               <label className="input input-bordered flex items-center gap-2 h-10  bg-second input-info">
@@ -81,37 +76,37 @@ const DbModelUpdate = forwardRef<HTMLDialogElement, DbModelUpdateProps>(
                   type="text"
                   className="text-white grow w-full placeholder:text-white opacity-70"
                   placeholder="Product title"
-                  {...methods.register("info.title")}
+                  {...methods.register("title")}
                 />
               </label>
               <span className="text-red-500 text-sm">
-                {methods.formState.errors.info?.title?.message}
+                {methods.formState.errors.title?.message}
               </span>
               <label className="input input-bordered flex items-center gap-2 h-10  bg-second input-info">
                 <input
                   type="text"
                   className="text-white grow w-full placeholder:text-white opacity-70"
                   placeholder="Category"
-                  {...methods.register("info.category")}
+                  {...methods.register("category")}
                 />
               </label>
               <span className="text-red-500 text-sm">
-                {methods.formState.errors.info?.category?.message}
+                {methods.formState.errors.category?.message}
               </span>
-              <div className="flex items-center gap-4">
+              <div className="flex gap-4">
                 <div>
                   <label className="input input-bordered flex items-center gap-2 h-10  bg-second input-info">
                     <input
                       type="text"
                       className="text-white grow w-full placeholder:text-white opacity-70"
                       placeholder="quantity"
-                      {...methods.register("info.stock", {
+                      {...methods.register("stock", {
                         valueAsNumber: true,
                       })}
                     />
                   </label>
                   <span className="text-red-500 text-sm">
-                    {methods.formState.errors.info?.stock?.message}
+                    {methods.formState.errors.stock?.message}
                   </span>
                 </div>
                 <div>
@@ -120,13 +115,13 @@ const DbModelUpdate = forwardRef<HTMLDialogElement, DbModelUpdateProps>(
                       type="text"
                       className="text-white grow w-full placeholder:text-white opacity-70"
                       placeholder="Price"
-                      {...methods.register("info.price", {
+                      {...methods.register("price", {
                         valueAsNumber: true,
                       })}
                     />
                   </label>
                   <span className="text-red-500 text-sm">
-                    {methods.formState.errors.info?.price?.message}
+                    {methods.formState.errors.price?.message}
                   </span>
                 </div>
               </div>

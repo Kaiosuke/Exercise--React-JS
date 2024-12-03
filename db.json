@@ -1,68 +1,164 @@
 {
-  "products": [
+  "users": [
     {
-      "id": 4,
-      "title": "Red Lipstick",
-      "description": "The Red Lipstick is a classic and bold choice for adding a pop of color to your lips. With a creamy and pigmented formula, it provides a vibrant and long-lasting finish.",
-      "category": "beauty",
-      "price": 12.99,
-      "discountPercentage": 19.03,
-      "rating": 2.51,
-      "stock": 68,
-      "tags": [
-        "beauty",
-        "lipstick"
-      ],
-      "brand": "Chic Cosmetics",
-      "sku": "O5IF1NTA",
-      "weight": 5,
-      "dimensions": {
-        "width": 14.37,
-        "height": 13.94,
-        "depth": 14.6
-      },
-      "warrantyInformation": "Lifetime warranty",
-      "shippingInformation": "Ships in 2 weeks",
-      "availabilityStatus": "In Stock",
-      "reviews": [
-        {
-          "rating": 5,
-          "comment": "Great product!",
-          "date": "2024-05-23T08:56:21.619Z",
-          "reviewerName": "Leo Rivera",
-          "reviewerEmail": "leo.rivera@x.dummyjson.com"
-        },
-        {
-          "rating": 4,
-          "comment": "Very pleased!",
-          "date": "2024-05-23T08:56:21.619Z",
-          "reviewerName": "Oscar Powers",
-          "reviewerEmail": "oscar.powers@x.dummyjson.com"
-        },
-        {
-          "rating": 5,
-          "comment": "Very pleased!",
-          "date": "2024-05-23T08:56:21.619Z",
-          "reviewerName": "Carter Rivera",
-          "reviewerEmail": "carter.rivera@x.dummyjson.com"
-        }
-      ],
-      "returnPolicy": "90 days return policy",
-      "minimumOrderQuantity": 6,
-      "meta": {
-        "createdAt": "2024-05-23T08:56:21.619Z",
-        "updatedAt": "2024-05-23T08:56:21.619Z",
-        "barcode": "9444582199406",
-        "qrCode": "https://assets.dummyjson.com/public/qr-code.png"
-      },
-      "images": [
-        "https://cdn.dummyjson.com/products/images/beauty/Red%20Lipstick/1.png"
-      ],
-      "thumbnail": "https://cdn.dummyjson.com/products/images/beauty/Red%20Lipstick/thumbnail.png"
+      "email": "dsa@gmail.com",
+      "password": "$2a$10$r30HbsNIHVfXVvQ95G604OTuRNZ/AVF52ueC2QWaL25RalHhf3N9C",
+      "name": "d",
+      "confirm_password": "12345678",
+      "id": 3
     },
     {
+      "email": "tronglesele@gmail.com",
+      "password": "$2a$10$9U4ZyZ1KUw3HQz7c943B/OgDa6DP.aek6hLlfp3Uj6.67Yd9gr8zq",
+      "name": "trongle",
+      "confirm_password": "12341234",
+      "id": 5
+    },
+    {
+      "email": "trongleseasdale@gmail.com",
+      "password": "$2a$10$Nq/2aypx1Vzm3/GC.NzIke3imjfx/yP2Y82kaCj3ImnZx86kstOt6",
+      "name": "trongle",
+      "confirm_password": "12341234",
+      "id": 6
+    },
+    {
+      "email": "tronsdale@gmail.com",
+      "password": "$2a$10$Jzy2m8e/fZKoud25p2jXNOPEPPrN7YR.0Xgv4zlewdCPkiPyvJAN2",
+      "name": "trongle",
+      "confirm_password": "12341234",
+      "id": 7
+    },
+    {
+      "email": "trongleedasdle@gmail.com",
+      "password": "$2a$10$czb23PPl34BpeifVSOPYceKrmReoowcZ9cAh5J7y7OSzUUD/eLKsG",
+      "name": "3213",
+      "confirm_password": "21312312",
+      "id": 8
+    },
+    {
+      "email": "trongleedsadasdle@gmail.com",
+      "password": "$2a$10$BtU85OEXj40ynBwgkye7ie5GLfHil4KBdKd2Ni9/jats4e2TdQnpK",
+      "name": "3213",
+      "confirm_password": "21312312",
+      "id": 9
+    },
+    {
+      "email": "troedsadasdle@gmail.com",
+      "password": "$2a$10$KG7HPpvdAvXKRGOHcSKg3.iWGNYJe2BqfP99xoTm4e7n8.y26HYi.",
+      "name": "3213",
+      "confirm_password": "21312312",
+      "id": 10
+    },
+    {
+      "email": "troedsaddasdsdle@gmail.com",
+      "password": "$2a$10$uhNAtEHMIqYpk54Ru2Wsr.Lb1f7W2Mp6O5rLUm6W0zDhCClZfsZPO",
+      "name": "3213",
+      "confirm_password": "21312312",
+      "id": 11
+    },
+    {
+      "email": "addasdsdle@gmail.com",
+      "password": "$2a$10$iZTaWqKVWVlK66.D3IEYeeDNIfSNqWKt2cDp6foByo1gXSvfmZDOm",
+      "name": "3213",
+      "confirm_password": "21312312",
+      "id": 12
+    },
+    {
+      "email": "xdasZ@gmail.com",
+      "password": "$2a$10$0RoLAcU8q6D/i4eR6Fm6nOmprLcBA.p9U2JtPzsXf7ba273IBgjgO",
+      "name": "dasdasd",
+      "confirm_password": "312312",
+      "id": 13
+    },
+    {
+      "email": "trondsagleele@gmail.com",
+      "password": "$2a$10$rlM8fJeJCylgXP4VhcNSCOaO13r1ipY7IH3E5fELsU3.GeQMIhaFu",
+      "name": "321",
+      "confirm_password": "312312312",
+      "id": 14
+    },
+    {
+      "email": "ele@gmail.com",
+      "password": "$2a$10$WnHf418fdbX68ZCfjdd7neTpLYwKKX.xq5K4InTO7Iani9OCsRMSi",
+      "name": "2",
+      "confirm_password": "2321",
+      "id": 15
+    },
+    {
+      "email": "trongleele321@gmail.com",
+      "password": "$2a$10$Nmkr.tK036Bx4n3RxhPdeeh2OrQLgoMqHIbbI3MW2jMZchRPNhzpS",
+      "name": "12",
+      "confirm_password": "122312",
+      "id": 16
+    },
+    {
+      "email": "trongleeledas@gmail.com",
+      "password": "$2a$10$8pHm9q93CiYSw37okdZe4OOABnvAwDkqB29/EXVFhzsZaEjcZvgPq",
+      "name": "123",
+      "confirmPassword": "12341234",
+      "id": 17
+    },
+    {
+      "email": "1@gmail.com",
+      "password": "$2a$10$QHoHgDkOrZtvu8rpsBgP2OfC3q4Bu5iaM0TskE2f4cPz.XK.95bke",
+      "name": "321321",
+      "confirmPassword": "12345678",
+      "id": 18
+    },
+    {
+      "email": "tronglee2212@gmail.com",
+      "password": "$2a$10$H/8MGV3kfONYh.ipSEwh9evdaDVM815ciQWY1brrYXOBDt6PZQsVe",
+      "name": "21321",
+      "confirmPassword": "11111111",
+      "id": 19
+    },
+    {
+      "email": "tronglee@gmail.com",
+      "password": "$2a$10$FRtUUC1fomxPURwYltIvdOJhGQV1zZ4U9YuciYzVoyISdT1uy4ybi",
+      "name": "2133",
+      "confirmPassword": "trongle2001",
+      "id": 20
+    },
+    {
+      "email": "trongleeldsae@gmail.com",
+      "password": "$2a$10$WvgEywb7vR6I8u./LujOBefnh8hn6H7B7XNxkyVAB/MxksKMtLE/i",
+      "name": "trong",
+      "confirmPassword": "trongle2001",
+      "id": 21
+    },
+    {
+      "email": "trongleele@gmail.com",
+      "password": "$2a$10$9UUoUc/hWLi.uMIo/3KmUOgy8FREYn9gCifoNXH2ZUz4mk.xugqOy",
+      "name": "trongle",
+      "confirmPassword": "trongle2001",
+      "id": 22
+    },
+    {
+      "email": "trongleele32@gmail.com",
+      "password": "$2a$10$STmCrzBM2N7nsa6DCBapruOu8aOp9rkAHQkE1a5Igd6d1liyIt.bK",
+      "name": "trong32",
+      "confirmPassword": "trongle2001",
+      "id": 23
+    },
+    {
+      "email": "trongleeedwqle@gmail.com",
+      "password": "$2a$10$339Lm2c571qe.pTwL9d66uLaStrrBiKARKxVP/ShEEB3NwR2RLYOy",
+      "name": "trong32",
+      "confirmPassword": "trongle2001",
+      "id": 24
+    },
+    {
+      "email": "tronglele2@gmail.com",
+      "password": "$2a$10$.9ImQTQZ9CKpdKS7DXwtBeX5SOO6KVvBGkLyUOPnhNI2rLj3jfkjC",
+      "name": "trongle",
+      "confirmPassword": "trongle2001",
+      "id": 25
+    }
+  ],
+  "products": [
+    {
       "id": 5,
-      "title": "Red Nail Polish",
+      "title": "Red Nail Polish32132",
       "description": "The Red Nail Polish offers a rich and glossy red hue for vibrant and polished nails. With a quick-drying formula, it provides a salon-quality finish at home.",
       "category": "beauty",
       "price": 8.99,
@@ -122,7 +218,7 @@
     },
     {
       "id": 7,
-      "title": "Chanel Coco Noir Eau De",
+      "title": "Chanel Coco Noir Eau Dedá",
       "description": "Coco Noir by Chanel is an elegant and mysterious fragrance, featuring notes of grapefruit, rose, and sandalwood. Perfect for evening occasions.",
       "category": "fragrances",
       "price": 129.99,
@@ -556,7 +652,7 @@
     },
     {
       "id": 14,
-      "title": "Knoll Saarinen Executive Conference Chair",
+      "title": "Knoll Saarinen Executive Conference Chair321321",
       "description": "The Knoll Saarinen Executive Conference Chair is a modern and ergonomic chair, perfect for your office or conference room with its timeless design.",
       "category": "furniture",
       "price": 499.99,
@@ -618,7 +714,7 @@
     },
     {
       "id": 15,
-      "title": "Wooden Bathroom Sink With Mirror",
+      "title": "Wooden Bathroom Sink With Mirror321",
       "description": "The Wooden Bathroom Sink with Mirror is a unique and stylish addition to your bathroom, featuring a wooden sink countertop and a matching mirror.",
       "category": "furniture",
       "price": 799.99,
@@ -1562,18 +1658,95 @@
       "id": 32
     },
     {
-      "title": "bong",
-      "category": "beauty",
-      "stock": 20,
-      "price": 1111,
+      "title": "321",
+      "category": "321",
+      "stock": 321,
+      "price": 21,
       "id": 33
     },
     {
-      "title": "bong",
-      "category": "beauty",
-      "stock": 20,
-      "price": 1111,
+      "title": "32",
+      "category": "32",
+      "stock": 321,
+      "price": 321,
       "id": 34
+    },
+    {
+      "title": "321",
+      "category": "321",
+      "stock": 1321,
+      "price": 1212,
+      "id": 35
+    },
+    {
+      "title": "saSAsa",
+      "category": "11",
+      "price": 11,
+      "stock": 1,
+      "id": 36
+    },
+    {
+      "title": "12332312",
+      "category": "312",
+      "price": 321,
+      "stock": 32132,
+      "id": 37
+    },
+    {
+      "title": "đâsdasdas",
+      "category": "23123",
+      "price": 31231,
+      "stock": 12321,
+      "id": 38
+    },
+    {
+      "title": "3213312",
+      "category": "323",
+      "price": 312312,
+      "stock": 312,
+      "id": 40
+    },
+    {
+      "title": "đâsdas",
+      "category": "123",
+      "price": 312,
+      "stock": 3123,
+      "id": 41
+    },
+    {
+      "title": "sadasdas",
+      "category": "321321",
+      "price": 32,
+      "stock": 32,
+      "id": 42
+    },
+    {
+      "title": "rte212",
+      "category": "12",
+      "price": 12,
+      "stock": 12,
+      "id": 43
+    },
+    {
+      "title": "ewq2321",
+      "category": "12",
+      "price": 21,
+      "stock": 12,
+      "id": 44
+    },
+    {
+      "title": "21312312",
+      "category": "12",
+      "price": 12,
+      "stock": 12,
+      "id": 45
+    },
+    {
+      "title": "dsa21232",
+      "category": "12",
+      "price": 321,
+      "stock": 321,
+      "id": 46
     }
   ]
 }

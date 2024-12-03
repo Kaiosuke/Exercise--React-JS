@@ -11,6 +11,9 @@ import Root from "./pages/Root";
 import Products from "./pages/Products/Products";
 import ProductDetail from "./pages/Products/ProductDetail/ProductDetail";
 import Service from "./pages/Services/Service";
+import LayoutAuth from "./pages/auth/layoutAth";
+import SignIn from "./pages/auth/signIn/SignIn";
+import Register from "./pages/auth/register/Register";
 
 function App() {
   return (
@@ -28,6 +31,10 @@ function App() {
           <Route path="user" element={<DbUser />} />
           <Route path="page" element={<Pages />} />
           <Route path="auth" element={<DbAuth />} />
+        </Route>
+        <Route path="/users" element={<LayoutAuth />}>
+          <Route path="signIn" element={<SignIn />} />
+          <Route path="register" element={<Register />} />
         </Route>
         <Route path="*" element={<NotFound />} />
       </Routes>

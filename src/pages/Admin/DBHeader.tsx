@@ -9,6 +9,7 @@ const DBHeader = () => {
   const handleDarkMode = () => {
     setDarkMode(!darkMode);
   };
+
   return (
     <header className="fixed bg-primary p-4 w-full border-b border-red-200">
       <div className="flex items-center">

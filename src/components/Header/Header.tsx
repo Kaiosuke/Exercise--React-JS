@@ -1,6 +1,19 @@
+import { useDispatch, useSelector } from "react-redux";
 import { NavLink } from "react-router-dom";
+import { authSelector } from "../../redux/selector";
+import { logoutSuccess } from "../../redux/slices/authSlice";
 
 const Header = () => {
+  const { currentUser } = useSelector(authSelector);
+
+  const { user } = currentUser;
+
+  const dispatch = useDispatch();
+
+  const handleLogout = () => {
+    dispatch(logoutSuccess());
+  };
+
   return (
     <header>
       <div className="navbar bg-cyan-500">
@@ -37,6 +50,11 @@ const Header = () => {
               <li>
                 <NavLink to="/services">Service</NavLink>
               </li>
+              {user && (
+                <li className="text-xl text-white">
+                  <NavLink to="/admin">Dashboard</NavLink>
+                </li>
+              )}
             </ul>
           </div>
           <a href="#!" className="">
@@ -62,13 +80,24 @@ const Header = () => {
             <li className="text-xl text-white">
               <NavLink to="/services">Service</NavLink>
             </li>
-            <li className="text-xl text-white">
-              <NavLink to="/admin">Dashboard</NavLink>
-            </li>
+            {user && (
+              <li className="text-xl text-white">
+                <NavLink to="/admin">Dashboard</NavLink>
+              </li>
+            )}
           </ul>
         </div>
         <div className="navbar-end">
-          <a className="btn btn-sm">Sign In</a>
+          {user && <div className="font-bold mr-2">{user.name}</div>}
+          {user ? (
+            <button className="btn btn-sm" onClick={handleLogout}>
+              Sign out
+            </button>
+          ) : (
+            <NavLink to="/users/signIn" className="btn btn-sm">
+              Sign In
+            </NavLink>
+          )}
         </div>
       </div>
     </header>

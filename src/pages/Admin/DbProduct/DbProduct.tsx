@@ -4,22 +4,24 @@ import { FaHome, FaPlus, FaTrash } from "react-icons/fa";
 import { ImBookmarks } from "react-icons/im";
 import { IoIosSettings } from "react-icons/io";
 import { Link } from "react-router-dom";
-import DbModelDelete from "../../../components/DbModelDelete";
 import {
   addData,
   deleteData,
   getDataList,
   updateData,
 } from "../../../api/requestApi";
+import DbModelDelete from "../../../components/DbModelDelete";
 import DbProductList from "./DbProductList";
 
+import { GrFormNext, GrFormPrevious } from "react-icons/gr";
+import ReactPaginate from "react-paginate";
+import { useDispatch, useSelector } from "react-redux";
 import DbModelAdd from "../../../components/DbModelAdd";
 import DbModelUpdate from "../../../components/DbModelUpdate";
-import ReactPaginate from "react-paginate";
-import { GrFormNext, GrFormPrevious } from "react-icons/gr";
+import { dataListSelector } from "../../../redux/selector";
+import { AppDispatch } from "../../../redux/store";
 
 const DbProduct = () => {
-  const [products, setProducts] = useState([]);
   const [stateProduct, setStateProduct] = useState(false);
   const [productId, setProductId] = useState<number | null>(null);
   const [currentPage, setCurrentPage] = useState(0);
@@ -29,12 +31,19 @@ const DbProduct = () => {
   const refDelete = useRef<HTMLDialogElement | null>(null);
   const refUpdate = useRef<HTMLDialogElement | null>(null);
 
+  const dispatch = useDispatch<AppDispatch>();
+
   useEffect(() => {
-    (async () => {
-      const data = await getDataList("products");
-      setProducts(data);
-    })();
-  }, [stateProduct]);
+    dispatch(getDataList("products"));
+  }, [dispatch, stateProduct]);
+
+  const { dataList, isLoading } = useSelector(dataListSelector);
+
+  const [products, setProducts] = useState(dataList);
+
+  useEffect(() => {
+    setProducts(dataList);
+  }, [dataList]);
 
   const handleShowAddProduct = () => {
     refAdd.current && refAdd.current.showModal();
@@ -76,7 +85,7 @@ const DbProduct = () => {
     if (productId) {
       const isDelete = deleteData("products", productId);
       if (await isDelete) {
-        const newProducts = products.filter((product: { id: number }) => {
+        const newProducts: any = products.filter((product: { id: number }) => {
           return product.id !== productId;
         });
         setProducts(newProducts);
@@ -90,6 +99,10 @@ const DbProduct = () => {
   const handlePageClick = ({ selected }: { selected: number }) => {
     setCurrentPage(selected);
   };
+
+  if (isLoading) {
+    return <div>Loading ...</div>;
+  }
 
   return (
     <>
@@ -190,7 +203,7 @@ const DbProduct = () => {
             marginPagesDisplayed={2}
             pageRangeDisplayed={5}
             onPageChange={handlePageClick}
-            activeClassName={"active"}
+            // activeClassName={"active"}
             pageLinkClassName={"page-link"}
             containerClassName={"pagination"}
           />
