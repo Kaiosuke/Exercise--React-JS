@@ -11,7 +11,7 @@ import Root from "./pages/Root";
 import Products from "./pages/Products/Products";
 import ProductDetail from "./pages/Products/ProductDetail/ProductDetail";
 import Service from "./pages/Services/Service";
-import LayoutAuth from "./pages/auth/layoutAth";
+import LayoutAuth from "./pages/auth/LayoutAth";
 import SignIn from "./pages/auth/signIn/SignIn";
 import Register from "./pages/auth/register/Register";
 
