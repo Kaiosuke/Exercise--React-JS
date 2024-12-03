@@ -1,4 +1,4 @@
-import { Provider, useSelector } from "react-redux";
+import { Provider } from "react-redux";
 import store from "./store";
 
 const Providers: React.FC<{ children: React.ReactNode }> = ({ children }) => {

@@ -1,7 +1,7 @@
 import { createContext } from "react";
 
 interface AppContextType {
-  products: string[];
+  products: any[];
 }
 
 const AppContext = createContext<AppContextType | null>(null);

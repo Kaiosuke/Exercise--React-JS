@@ -9,15 +9,15 @@ import { PersistGate } from "redux-persist/integration/react";
 import { persistor } from "./redux/store.tsx";
 
 createRoot(document.getElementById("root")!).render(
-  // <StrictMode>
-  <Providers>
-    <AppProvider>
-      <PersistGate loading={null} persistor={persistor}>
-        <BrowserRouter>
-          <App />
-        </BrowserRouter>
-      </PersistGate>
-    </AppProvider>
-  </Providers>
-  // </StrictMode>
+  <StrictMode>
+    <Providers>
+      <AppProvider>
+        <PersistGate loading={null} persistor={persistor}>
+          <BrowserRouter>
+            <App />
+          </BrowserRouter>
+        </PersistGate>
+      </AppProvider>
+    </Providers>
+  </StrictMode>
 );

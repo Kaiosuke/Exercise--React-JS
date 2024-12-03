@@ -1,9 +1,7 @@
-import { forwardRef, useEffect, useState } from "react";
-import { getData } from "../api/requestApi";
-import { z } from "zod";
-import { FormProvider, useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import useAppContext from "../hooks/useAppContext";
+import { forwardRef, useEffect, useState } from "react";
+import { FormProvider, useForm } from "react-hook-form";
+import { getData } from "../api/requestApi";
 import { productsForm } from "../reactHookForm";
 
 interface DataProps {

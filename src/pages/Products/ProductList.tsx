@@ -14,6 +14,7 @@ const ProductList: React.FC<{ data: Products; view: string }> = ({
   view,
 }) => {
   const { id, thumbnail, price, title, description }: Products = data;
+
   const formatMoney = (money: Number) => {
     return money.toLocaleString("it-IT", {
       style: "currency",
