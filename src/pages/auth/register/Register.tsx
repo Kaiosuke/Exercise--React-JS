@@ -32,7 +32,7 @@ const Register = () => {
   return (
     <div className="text-white w-[420px] m-auto  border border-white rounded-lg">
       <div className="p-10">
-        <h1 className="text-center text-3xl font-bold">Sign in</h1>
+        <h1 className="text-center text-3xl font-bold">Register</h1>
         <FormProvider {...methods}>
           <form
             className="flex flex-col gap-4 mt-4"
@@ -135,7 +135,7 @@ const Register = () => {
                 {methods.formState.errors.confirmPassword?.message}
               </span>
             </div>
-            <button className="btn btn-neutral">Sign In</button>
+            <button className="btn btn-neutral">Register</button>
           </form>
         </FormProvider>
         <div className="flex items-center gap-2 mt-2">
