@@ -1,14 +1,13 @@
-import { zodResolver } from "@hookform/resolvers/zod";
-import { FormProvider, useForm } from "react-hook-form";
-import { NavLink, useNavigate } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
-import { authSelector } from "@/redux/selector";
-import { AppDispatch } from "@/redux/store";
 import { login } from "@/api/requestApi";
 import { loginForm } from "@/reactHookForm";
+import { AppDispatch } from "@/redux/store";
+import { zodResolver } from "@hookform/resolvers/zod";
 import { useState } from "react";
-import { IoEyeSharp } from "react-icons/io5";
+import { FormProvider, useForm } from "react-hook-form";
 import { FaEyeSlash } from "react-icons/fa";
+import { IoEyeSharp } from "react-icons/io5";
+import { useDispatch } from "react-redux";
+import { NavLink, useNavigate } from "react-router-dom";
 
 const SignIn = () => {
   const [showPassword, setShowPassword] = useState(false);
@@ -33,12 +32,6 @@ const SignIn = () => {
     }
     navigate("/");
   };
-
-  const { currentUser } = useSelector(authSelector);
-  if (currentUser) {
-    const { accessToken } = currentUser;
-    localStorage.setItem("token", JSON.stringify({ token: accessToken }));
-  }
 
   const handleShowPassWord = () => {
     setShowPassword(!showPassword);
