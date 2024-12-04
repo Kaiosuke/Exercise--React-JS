@@ -1,17 +1,16 @@
+import { viewProducts } from "@/redux/slices/productsSlice";
+import { AppDispatch } from "@/redux/store";
 import { CiBoxList } from "react-icons/ci";
 import { MdGridView } from "react-icons/md";
+import { useDispatch } from "react-redux";
 
-const ProductViews = ({
-  view,
-  setView,
-}: {
-  view: string;
-  setView: (value: string) => void;
-}) => {
+const ProductViews = ({ view }: { view: string }) => {
   const viewList = ["grid", "list"];
 
+  const dispatch = useDispatch<AppDispatch>();
+
   const handleView = (value: string) => {
-    setView(value);
+    dispatch(viewProducts(value));
   };
   return (
     <div className="flex items-center gap-2">

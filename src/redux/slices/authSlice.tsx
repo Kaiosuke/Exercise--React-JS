@@ -7,13 +7,9 @@ interface StateAuthType {
       accessToken?: string | null;
       user?: {
         name: string;
+        id: number;
       };
     };
-    error: null | string;
-  };
-  register: {
-    isLoading: boolean;
-    success: boolean;
     error: null | string;
   };
 }
@@ -25,11 +21,6 @@ const initialState: StateAuthType = {
       accessToken: null,
       user: undefined,
     },
-    error: null,
-  },
-  register: {
-    isLoading: false,
-    success: false,
     error: null,
   },
 };

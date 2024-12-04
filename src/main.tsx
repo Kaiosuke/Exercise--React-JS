@@ -7,16 +7,19 @@ import Providers from "./redux/Provider.tsx";
 import AppProvider from "./store/AppProvder.tsx";
 import { PersistGate } from "redux-persist/integration/react";
 import { persistor } from "./redux/store.tsx";
+import TodoProvider from "./store/TodoProvider.tsx";
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
     <Providers>
       <AppProvider>
-        <PersistGate loading={null} persistor={persistor}>
-          <BrowserRouter>
-            <App />
-          </BrowserRouter>
-        </PersistGate>
+        <TodoProvider>
+          <PersistGate loading={null} persistor={persistor}>
+            <BrowserRouter>
+              <App />
+            </BrowserRouter>
+          </PersistGate>
+        </TodoProvider>
       </AppProvider>
     </Providers>
   </StrictMode>

@@ -32,8 +32,8 @@ const ProductList: React.FC<{ data: Products; view: string }> = ({
     <>
       {view === "grid" ? (
         <div className="card card-compact bg-base-100 shadow-xl">
-          <figure className="relative">
-            {loading && <div className="skeleton h-[300px] w-[300px]"></div>}
+          <figure className="">
+            {loading && <div className="skeleton h-[276px] w-[276px]"></div>}
             <NavLink to={`/products/${id}`}>
               <img
                 src={thumbnail}
@@ -55,18 +55,14 @@ const ProductList: React.FC<{ data: Products; view: string }> = ({
           </div>
         </div>
       ) : (
-        <div className="card card-side bg-base-100 shadow-xl">
-          <figure className="relative">
-            {loading && (
-              <div className="absolute inset-0 bg-gray-200 animate-pulse" />
-            )}
+        <div className="card card-side bg-base-100 shadow-xl flex p-4">
+          <figure className="flex-[1_0_auto] max-w-[400px]">
+            {loading && <div className="skeleton w-[300px] h-[300px] "></div>}
             <img
               src={thumbnail}
               alt={title}
               onLoad={handleImageLoad}
-              className={`transition-opacity duration-300 ${
-                loading ? "opacity-0" : "opacity-100"
-              }`}
+              className={`${loading ? "hidden" : "block"}`}
             />
           </figure>
           <div className="card-body">

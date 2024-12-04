@@ -37,4 +37,9 @@ const productsForm = z.object({
   stock: z.number().min(1, "Stock must be greater than or equal 1"),
 });
 
-export { registerForm, loginForm, productsForm };
+const todoForm = z.object({
+  title: z.string().trim().min(1, "Title minimum 1 characters"),
+  description: z.string().trim().optional(),
+});
+
+export { registerForm, loginForm, productsForm, todoForm };

@@ -50,8 +50,8 @@ const Header = () => {
               <li>
                 <NavLink to="/services">Service</NavLink>
               </li>
-              {user && (
-                <li className="text-xl text-white">
+              {user && user.isAdmin && (
+                <li className="text-xl">
                   <NavLink to="/admin">Dashboard</NavLink>
                 </li>
               )}
@@ -80,15 +80,22 @@ const Header = () => {
             <li className="text-xl text-white">
               <NavLink to="/services">Service</NavLink>
             </li>
-            {user && (
+            {user && user.isAdmin && (
               <li className="text-xl text-white">
                 <NavLink to="/admin">Dashboard</NavLink>
               </li>
             )}
+            <li className="text-xl text-white">
+              <NavLink to="/todoList">TodoList</NavLink>
+            </li>
           </ul>
         </div>
         <div className="navbar-end">
-          {user && <div className="font-bold mr-2">{user.name}</div>}
+          {user && (
+            <div className="font-bold mr-2">
+              {user && !user.isAdmin ? user.name : `Hi Admin: ${user.name}`}
+            </div>
+          )}
           {user ? (
             <button className="btn btn-sm" onClick={handleLogout}>
               Sign out

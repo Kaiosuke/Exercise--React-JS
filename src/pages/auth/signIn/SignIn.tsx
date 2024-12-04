@@ -6,8 +6,13 @@ import { authSelector } from "@/redux/selector";
 import { AppDispatch } from "@/redux/store";
 import { login } from "@/api/requestApi";
 import { loginForm } from "@/reactHookForm";
+import { useState } from "react";
+import { IoEyeSharp } from "react-icons/io5";
+import { FaEyeSlash } from "react-icons/fa";
 
 const SignIn = () => {
+  const [showPassword, setShowPassword] = useState(false);
+
   const methods = useForm({
     resolver: zodResolver(loginForm),
     defaultValues: {
@@ -34,6 +39,10 @@ const SignIn = () => {
     const { accessToken } = currentUser;
     localStorage.setItem("token", JSON.stringify({ token: accessToken }));
   }
+
+  const handleShowPassWord = () => {
+    setShowPassword(!showPassword);
+  };
 
   return (
     <div className="text-white w-[420px] m-auto  border border-white rounded-lg">
@@ -84,11 +93,14 @@ const SignIn = () => {
                   />
                 </svg>
                 <input
-                  type="password"
+                  type={`${showPassword ? "text" : "password"}`}
                   className="grow"
                   placeholder="password"
                   {...methods.register("password")}
                 />
+                <div className="cursor-pointer" onClick={handleShowPassWord}>
+                  {showPassword ? <IoEyeSharp /> : <FaEyeSlash />}
+                </div>
               </label>
               <span className="text-red-500">
                 {methods.formState.errors.password?.message}

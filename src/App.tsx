@@ -5,15 +5,16 @@ import DbInbox from "./pages/Admin/DbInbox/DbInbox";
 import Pages from "./pages/Admin/DbPages/Pages";
 import DbProduct from "./pages/Admin/DbProduct/DbProduct";
 import DbUser from "./pages/Admin/DbUser/DbUser";
-import RootAdmin from "./pages/Admin/RootAdmin";
+import LayoutAdmin from "./pages/Admin/LayouAdmin";
 import Home from "./pages/Home/Home";
-import Root from "./pages/Root";
-import Products from "./pages/Products/Products";
 import ProductDetail from "./pages/Products/ProductDetail/ProductDetail";
+import Products from "./pages/Products/Products";
+import Root from "./pages/Root";
 import Service from "./pages/Services/Service";
 import LayoutAuth from "./pages/auth/LayoutAth";
-import SignIn from "./pages/auth/signIn/SignIn";
 import Register from "./pages/auth/register/Register";
+import SignIn from "./pages/auth/signIn/SignIn";
+import TodoList from "./pages/todoList/TodoList";
 
 function App() {
   return (
@@ -24,8 +25,9 @@ function App() {
           <Route path="products" element={<Products />} />
           <Route path="products/:id" element={<ProductDetail />} />
           <Route path="services" element={<Service />} />
+          <Route path="todoList" element={<TodoList />} />
         </Route>
-        <Route path="/admin" element={<RootAdmin />}>
+        <Route path="/admin" element={<LayoutAdmin />}>
           <Route path="inbox" element={<DbInbox />} />
           <Route path="product" element={<DbProduct />} />
           <Route path="user" element={<DbUser />} />

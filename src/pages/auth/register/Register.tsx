@@ -3,6 +3,9 @@ import { FormProvider, useForm } from "react-hook-form";
 import { NavLink, useNavigate } from "react-router-dom";
 import { register } from "@/api/requestApi";
 import { registerForm } from "@/reactHookForm";
+import { useState } from "react";
+import { IoEyeSharp } from "react-icons/io5";
+import { FaEyeSlash } from "react-icons/fa";
 
 const Register = () => {
   const methods = useForm({
@@ -14,6 +17,9 @@ const Register = () => {
       confirmPassword: "",
     },
   });
+
+  const [showPassword, setShowPassword] = useState(false);
+  const [showConfirmPassword, setConfirmShowPassword] = useState(false);
 
   const navigate = useNavigate();
 
@@ -27,6 +33,14 @@ const Register = () => {
     methods.reset();
     window.alert("Register Success");
     navigate("/users/signIn");
+  };
+
+  const handleShowPassWord = () => {
+    setShowPassword(!showPassword);
+  };
+
+  const handleShowConfirmPassWord = () => {
+    setConfirmShowPassword(!showConfirmPassword);
   };
 
   return (
@@ -100,11 +114,14 @@ const Register = () => {
                   />
                 </svg>
                 <input
-                  type="password"
+                  type={`${showPassword ? "text" : "password"}`}
                   className="grow"
                   placeholder="password"
                   {...methods.register("password")}
                 />
+                <div className="cursor-pointer" onClick={handleShowPassWord}>
+                  {showPassword ? <IoEyeSharp /> : <FaEyeSlash />}
+                </div>
               </label>
               <span className="text-red-500">
                 {methods.formState.errors.password?.message}
@@ -125,11 +142,17 @@ const Register = () => {
                   />
                 </svg>
                 <input
-                  type="password"
+                  type={`${showConfirmPassword ? "text" : "password"}`}
                   className="grow"
                   placeholder="Confirm password"
                   {...methods.register("confirmPassword")}
                 />
+                <div
+                  className="cursor-pointer"
+                  onClick={handleShowConfirmPassWord}
+                >
+                  {showConfirmPassword ? <IoEyeSharp /> : <FaEyeSlash />}
+                </div>
               </label>
               <span className="text-red-500">
                 {methods.formState.errors.confirmPassword?.message}

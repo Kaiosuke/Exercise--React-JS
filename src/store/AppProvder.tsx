@@ -45,7 +45,7 @@ const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
         order,
       })
     );
-  }, [dispatch, debouncedSearch, limit, sortBy, order]);
+  }, [dispatch, debouncedSearch, limit, sortBy, order, skip]);
 
   return (
     <AppContext.Provider value={{ products: products }}>

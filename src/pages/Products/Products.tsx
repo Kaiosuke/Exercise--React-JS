@@ -5,6 +5,7 @@ import useAppContext from "@/hooks/useAppContext";
 import {
   limitProducts,
   searchProducts,
+  skipProducts,
   sortPriceProducts,
 } from "@/redux/slices/productsSlice";
 import ProductArrange from "./ProductArrange";
@@ -13,15 +14,15 @@ import ProductSearch from "./ProductSearch";
 import ProductViews from "./ProductViews";
 import { productsSelector } from "@/redux/selector";
 import Loading from "@/components/Loading";
+import ProductPagination from "./ProductPagination";
 
 const Product = () => {
-  const [view, setView] = useState("grid");
   const [search, setSearch] = useState("");
   const dispatch = useDispatch();
 
   const { products } = useAppContext();
 
-  const { loading } = useSelector(productsSelector);
+  const { loading, view, skip, limit, pages } = useSelector(productsSelector);
 
   const handleLimit = (value: number | string) => {
     if (value === "all") {
@@ -40,10 +41,46 @@ const Product = () => {
     dispatch(sortPriceProducts(value));
   };
 
+  // Pagination
+  const currentPage = skip / limit;
+
+  const renderPagination = () => {
+    const pagination = [];
+
+    for (let i = 0; i < 3 && i < pages; i++) {
+      pagination.push(i);
+    }
+
+    if (currentPage > 3) {
+      pagination.push("...");
+    }
+    for (
+      let i = Math.max(3, currentPage - 1);
+      i <= Math.min(pages - 4, currentPage + 1);
+      i++
+    ) {
+      pagination.push(i);
+    }
+
+    if (currentPage < pages - 4) {
+      pagination.push("...");
+    }
+
+    for (let i = Math.max(pages - 3, 3); i < pages; i++) {
+      pagination.push(i);
+    }
+
+    return pagination;
+  };
+
+  const handlePage = (page: number | string) => {
+    dispatch(skipProducts(Number(page) * limit));
+  };
+
   return (
     <div className="max-w-[1200px] m-auto">
       <div className="flex items-center justify-between">
-        <ProductViews view={view} setView={setView} />
+        <ProductViews view={view} />
         <ProductSearch search={search} handleSearch={handleSearch} />
         <ProductArrange
           handleSortByPrice={handleSortByPrice}
@@ -71,6 +108,11 @@ const Product = () => {
           )}
         </div>
       )}
+      <ProductPagination
+        renderPagination={renderPagination}
+        handlePage={handlePage}
+        currentPage={currentPage}
+      />
     </div>
   );
 };

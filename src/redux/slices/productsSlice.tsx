@@ -9,6 +9,7 @@ interface ProductsState {
   search: string;
   sortBy: string;
   order: string;
+  view: string;
   loading: boolean;
   error: null | undefined | string;
 }
@@ -21,6 +22,7 @@ const initialState: ProductsState = {
   search: "",
   sortBy: "",
   order: "",
+  view: "grid",
   loading: false,
   error: null,
 };
@@ -36,6 +38,12 @@ const productsSlice = createSlice({
     limitProducts: (state, action) => {
       state.limit = action.payload;
       state.skip = 0;
+    },
+    viewProducts: (state, action) => {
+      state.view = action.payload;
+    },
+    skipProducts: (state, action) => {
+      state.skip = action.payload;
     },
     sortPriceProducts: (state, action) => {
       state.sortBy = "price";
@@ -66,5 +74,10 @@ const productsSlice = createSlice({
 });
 
 export default productsSlice.reducer;
-export const { searchProducts, limitProducts, sortPriceProducts } =
-  productsSlice.actions;
+export const {
+  searchProducts,
+  limitProducts,
+  sortPriceProducts,
+  viewProducts,
+  skipProducts,
+} = productsSlice.actions;

@@ -1,158 +1,19 @@
 {
   "users": [
     {
-      "email": "dsa@gmail.com",
-      "password": "$2a$10$r30HbsNIHVfXVvQ95G604OTuRNZ/AVF52ueC2QWaL25RalHhf3N9C",
-      "name": "d",
-      "confirm_password": "12345678",
-      "id": 3
-    },
-    {
-      "email": "tronglesele@gmail.com",
-      "password": "$2a$10$9U4ZyZ1KUw3HQz7c943B/OgDa6DP.aek6hLlfp3Uj6.67Yd9gr8zq",
-      "name": "trongle",
-      "confirm_password": "12341234",
-      "id": 5
-    },
-    {
-      "email": "trongleseasdale@gmail.com",
-      "password": "$2a$10$Nq/2aypx1Vzm3/GC.NzIke3imjfx/yP2Y82kaCj3ImnZx86kstOt6",
-      "name": "trongle",
-      "confirm_password": "12341234",
-      "id": 6
-    },
-    {
-      "email": "tronsdale@gmail.com",
-      "password": "$2a$10$Jzy2m8e/fZKoud25p2jXNOPEPPrN7YR.0Xgv4zlewdCPkiPyvJAN2",
-      "name": "trongle",
-      "confirm_password": "12341234",
-      "id": 7
-    },
-    {
-      "email": "trongleedasdle@gmail.com",
-      "password": "$2a$10$czb23PPl34BpeifVSOPYceKrmReoowcZ9cAh5J7y7OSzUUD/eLKsG",
-      "name": "3213",
-      "confirm_password": "21312312",
-      "id": 8
-    },
-    {
-      "email": "trongleedsadasdle@gmail.com",
-      "password": "$2a$10$BtU85OEXj40ynBwgkye7ie5GLfHil4KBdKd2Ni9/jats4e2TdQnpK",
-      "name": "3213",
-      "confirm_password": "21312312",
-      "id": 9
-    },
-    {
-      "email": "troedsadasdle@gmail.com",
-      "password": "$2a$10$KG7HPpvdAvXKRGOHcSKg3.iWGNYJe2BqfP99xoTm4e7n8.y26HYi.",
-      "name": "3213",
-      "confirm_password": "21312312",
-      "id": 10
-    },
-    {
-      "email": "troedsaddasdsdle@gmail.com",
-      "password": "$2a$10$uhNAtEHMIqYpk54Ru2Wsr.Lb1f7W2Mp6O5rLUm6W0zDhCClZfsZPO",
-      "name": "3213",
-      "confirm_password": "21312312",
-      "id": 11
-    },
-    {
-      "email": "addasdsdle@gmail.com",
-      "password": "$2a$10$iZTaWqKVWVlK66.D3IEYeeDNIfSNqWKt2cDp6foByo1gXSvfmZDOm",
-      "name": "3213",
-      "confirm_password": "21312312",
-      "id": 12
-    },
-    {
-      "email": "xdasZ@gmail.com",
-      "password": "$2a$10$0RoLAcU8q6D/i4eR6Fm6nOmprLcBA.p9U2JtPzsXf7ba273IBgjgO",
-      "name": "dasdasd",
-      "confirm_password": "312312",
-      "id": 13
-    },
-    {
-      "email": "trondsagleele@gmail.com",
-      "password": "$2a$10$rlM8fJeJCylgXP4VhcNSCOaO13r1ipY7IH3E5fELsU3.GeQMIhaFu",
-      "name": "321",
-      "confirm_password": "312312312",
-      "id": 14
-    },
-    {
-      "email": "ele@gmail.com",
-      "password": "$2a$10$WnHf418fdbX68ZCfjdd7neTpLYwKKX.xq5K4InTO7Iani9OCsRMSi",
-      "name": "2",
-      "confirm_password": "2321",
-      "id": 15
-    },
-    {
-      "email": "trongleele321@gmail.com",
-      "password": "$2a$10$Nmkr.tK036Bx4n3RxhPdeeh2OrQLgoMqHIbbI3MW2jMZchRPNhzpS",
-      "name": "12",
-      "confirm_password": "122312",
-      "id": 16
-    },
-    {
-      "email": "trongleeledas@gmail.com",
-      "password": "$2a$10$8pHm9q93CiYSw37okdZe4OOABnvAwDkqB29/EXVFhzsZaEjcZvgPq",
-      "name": "123",
-      "confirmPassword": "12341234",
-      "id": 17
-    },
-    {
-      "email": "1@gmail.com",
-      "password": "$2a$10$QHoHgDkOrZtvu8rpsBgP2OfC3q4Bu5iaM0TskE2f4cPz.XK.95bke",
-      "name": "321321",
-      "confirmPassword": "12345678",
-      "id": 18
-    },
-    {
-      "email": "tronglee2212@gmail.com",
-      "password": "$2a$10$H/8MGV3kfONYh.ipSEwh9evdaDVM815ciQWY1brrYXOBDt6PZQsVe",
-      "name": "21321",
-      "confirmPassword": "11111111",
-      "id": 19
-    },
-    {
-      "email": "tronglee@gmail.com",
-      "password": "$2a$10$FRtUUC1fomxPURwYltIvdOJhGQV1zZ4U9YuciYzVoyISdT1uy4ybi",
-      "name": "2133",
-      "confirmPassword": "trongle2001",
-      "id": 20
-    },
-    {
-      "email": "trongleeldsae@gmail.com",
-      "password": "$2a$10$WvgEywb7vR6I8u./LujOBefnh8hn6H7B7XNxkyVAB/MxksKMtLE/i",
-      "name": "trong",
-      "confirmPassword": "trongle2001",
-      "id": 21
-    },
-    {
       "email": "trongleele@gmail.com",
-      "password": "$2a$10$9UUoUc/hWLi.uMIo/3KmUOgy8FREYn9gCifoNXH2ZUz4mk.xugqOy",
+      "password": "$2a$10$6KlXtMtooXBKeJDe16Xhw.PLItNoBveGwrhfz665nPzJeSFmxZLPa",
       "name": "trongle",
+      "isAdmin": true,
       "confirmPassword": "trongle2001",
-      "id": 22
+      "id": 1
     },
     {
-      "email": "trongleele32@gmail.com",
-      "password": "$2a$10$STmCrzBM2N7nsa6DCBapruOu8aOp9rkAHQkE1a5Igd6d1liyIt.bK",
-      "name": "trong32",
+      "email": "trongleele2@gmail.com",
+      "password": "$2a$10$.TQSnWacfBiPio6SXklmzOwtnHsIWUd2lJlYjWP1gvHOn8z8Ic9Yi",
+      "name": "trongle2",
       "confirmPassword": "trongle2001",
-      "id": 23
-    },
-    {
-      "email": "trongleeedwqle@gmail.com",
-      "password": "$2a$10$339Lm2c571qe.pTwL9d66uLaStrrBiKARKxVP/ShEEB3NwR2RLYOy",
-      "name": "trong32",
-      "confirmPassword": "trongle2001",
-      "id": 24
-    },
-    {
-      "email": "tronglele2@gmail.com",
-      "password": "$2a$10$.9ImQTQZ9CKpdKS7DXwtBeX5SOO6KVvBGkLyUOPnhNI2rLj3jfkjC",
-      "name": "trongle",
-      "confirmPassword": "trongle2001",
-      "id": 25
+      "id": 2
     }
   ],
   "products": [
@@ -1761,6 +1622,56 @@
       "price": 1312,
       "stock": 3232,
       "id": 48
+    }
+  ],
+  "todos": [
+    {
+      "id": 3,
+      "userId": 2,
+      "title": "Không được bỏ trống",
+      "description": "Có thể bỏ trống",
+      "status": false,
+      "priority": "Medium"
+    },
+    {
+      "title": "121",
+      "description": "das",
+      "priority": "High",
+      "status": false,
+      "userId": 1,
+      "id": 7
+    },
+    {
+      "title": "dasdasdas",
+      "description": "das",
+      "priority": "Medium",
+      "status": true,
+      "userId": 1,
+      "id": 8
+    },
+    {
+      "title": "das",
+      "description": "das",
+      "priority": "High",
+      "status": true,
+      "userId": 1,
+      "id": 9
+    },
+    {
+      "title": "das",
+      "description": "das",
+      "priority": "Medium",
+      "status": false,
+      "userId": 1,
+      "id": 10
+    },
+    {
+      "title": "das",
+      "description": "das",
+      "priority": "Medium",
+      "status": false,
+      "userId": 1,
+      "id": 11
     }
   ]
 }
