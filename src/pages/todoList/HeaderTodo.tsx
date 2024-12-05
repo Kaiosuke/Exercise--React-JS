@@ -1,5 +1,5 @@
 import useTodoContext from "@/hooks/useTodoContext";
-import { todoListSelector } from "@/redux/selector";
+import { authSelector, todoListSelector } from "@/redux/selector";
 import {
   filterByPriority,
   filterBySearch,
@@ -24,14 +24,19 @@ const HeaderTodo = () => {
   const { filters } = useSelector(todoListSelector);
   const { todoList } = useSelector(todoListSelector);
 
+  const { currentUser } = useSelector(authSelector);
+
+  const { user } = currentUser;
+
   const todoCompleted = todoList.filter(
-    (todo: { status: boolean }) => todo.status
+    (todo: { status: boolean; userId: number }) =>
+      user && todo.userId === user.id && todo.status
   );
 
   const todoDoing = todoList.filter(
-    (todo: { status: boolean }) => !todo.status
+    (todo: { status: boolean; userId: number }) =>
+      user && todo.userId === user.id && !todo.status
   );
-
   const { status, priorities, search }: Data = filters;
 
   useEffect(() => {
