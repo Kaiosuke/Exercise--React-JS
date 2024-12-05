@@ -5,7 +5,7 @@ import {
   filterBySearch,
   filterByStatus,
 } from "@/redux/slices/todoSlice";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { AiOutlineLoading3Quarters } from "react-icons/ai";
 import { FaPlus } from "react-icons/fa";
 import { MdDoneAll } from "react-icons/md";
@@ -14,21 +14,34 @@ import { useDispatch, useSelector } from "react-redux";
 interface Data {
   search: string;
   status: string;
-  priority: string[];
+  priorities: string[];
 }
 
 const HeaderTodo = () => {
   const { onOpenModelAddAndUpdate } = useTodoContext();
-  const [search, setSearch] = useState("");
+  const [searchText, setSearchText] = useState("");
 
   const { filters } = useSelector(todoListSelector);
+  const { todoList } = useSelector(todoListSelector);
 
-  const { status, priority }: Data = filters;
+  const todoCompleted = todoList.filter(
+    (todo: { status: boolean }) => todo.status
+  );
+
+  const todoDoing = todoList.filter(
+    (todo: { status: boolean }) => !todo.status
+  );
+
+  const { status, priorities, search }: Data = filters;
+
+  useEffect(() => {
+    setSearchText(search);
+  }, [search]);
 
   const dispatch = useDispatch();
 
   const handleFilterBySearch = (value: string) => {
-    setSearch(value);
+    setSearchText(value);
     dispatch(filterBySearch(value));
   };
 
@@ -47,7 +60,7 @@ const HeaderTodo = () => {
           type="text"
           className="grow "
           placeholder="Search"
-          value={search}
+          value={searchText}
           onChange={(e) => handleFilterBySearch(e.target.value)}
         />
         <svg
@@ -84,33 +97,33 @@ const HeaderTodo = () => {
         <input
           type="checkbox"
           value="Low"
-          defaultChecked={priority.includes("Low")}
+          defaultChecked={priorities.includes("Low")}
           onClick={() => handleFilterByPriority("Low")}
-          className="checkbox [--chkbg:green] [--chkfg:white]"
+          className="checkbox border-2 border-green-400 [--chkbg:green] [--chkfg:white]"
         />
         <input
           type="checkbox"
           value="Medium"
-          defaultChecked={priority.includes("Medium")}
+          defaultChecked={priorities.includes("Medium")}
           onClick={() => handleFilterByPriority("Medium")}
-          className="checkbox border-orange-400 [--chkbg:orange] [--chkfg:white] "
+          className="checkbox border-2 border-orange-400 [--chkbg:orange] [--chkfg:white] "
         />
         <input
           type="checkbox"
           value="High"
-          defaultChecked={priority.includes("High")}
+          defaultChecked={priorities.includes("High")}
           onClick={() => handleFilterByPriority("High")}
-          className="checkbox [--chkbg:red] [--chkfg:white]"
+          className="checkbox border-2 border-red-400 [--chkbg:red] [--chkfg:white]"
         />
       </div>
       <div className="flex items-center gap-1 ml-4">
         <button className="btn btn-outline btn-success btn-sm">
           <MdDoneAll />
-          10
+          {todoCompleted.length}
         </button>
         <button className="btn btn-outline btn-warning btn-sm">
           <AiOutlineLoading3Quarters />
-          10
+          {todoDoing.length}
         </button>
       </div>
     </div>

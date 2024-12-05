@@ -9,7 +9,7 @@ const TodoProvider: React.FC<{ children: React.ReactNode }> = ({
 }) => {
   const todoList: any[] = [];
 
-  const [todoId, setTodoId] = useState<number | undefined>();
+  const [todoId, setTodoId] = useState<number | null>(null);
   const [stateTodo, setStateTodo] = useState(false);
 
   const dispatch = useDispatch<AppDispatch>();
@@ -38,6 +38,7 @@ const TodoProvider: React.FC<{ children: React.ReactNode }> = ({
         refAddAndUpdate,
         refDelete,
         todoId,
+        setTodoId,
         stateTodo,
         setStateTodo,
         onModelDelete: handleOpenModeDelete,

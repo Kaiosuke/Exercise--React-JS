@@ -9,7 +9,8 @@ import { FormProvider, useForm } from "react-hook-form";
 import { useDispatch, useSelector } from "react-redux";
 
 const ModelAddAndUpdate = () => {
-  const { refAddAndUpdate, todoId, setStateTodo, stateTodo } = useTodoContext();
+  const { refAddAndUpdate, todoId, setStateTodo, stateTodo, setTodoId } =
+    useTodoContext();
   const [priority, setPriority] = useState("Low");
 
   const { currentUser } = useSelector(authSelector);
@@ -33,11 +34,18 @@ const ModelAddAndUpdate = () => {
         setPriority(data.priority);
         methods.reset(data);
       })();
+    } else {
+      methods.reset({
+        title: "",
+        description: "",
+      });
+      setPriority("Low");
     }
   }, [todoId]);
 
   const handleCloseModel = () => {
     refAddAndUpdate.current.close();
+    setTodoId(null);
   };
 
   const handleGetData = async (data: any) => {
@@ -45,7 +53,6 @@ const ModelAddAndUpdate = () => {
       const newData = { ...data, priority };
       const isUpdate = updateData("todos", todoId, newData);
       if (await isUpdate) {
-        methods.reset();
         dispatch(updateTodo({ ...newData, id: todoId }));
         handleCloseModel();
       }
@@ -55,8 +62,9 @@ const ModelAddAndUpdate = () => {
       const isAdd = addData("todos", newData);
       if (await isAdd) {
         setStateTodo(!stateTodo);
-        methods.reset();
         handleCloseModel();
+        methods.reset();
+        setPriority("Low");
       }
     }
   };

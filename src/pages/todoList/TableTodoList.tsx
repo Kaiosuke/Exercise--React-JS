@@ -1,4 +1,4 @@
-import { authSelector, todoListSelector } from "@/redux/selector";
+import { authSelector, todoRemainingSelector } from "@/redux/selector";
 import { useSelector } from "react-redux";
 import TodoItems from "./TodoItems";
 
@@ -16,7 +16,7 @@ const TableTodoList = () => {
 
   const { user } = currentUser;
 
-  const { todoList } = useSelector(todoListSelector);
+  const todoList = useSelector(todoRemainingSelector);
 
   return (
     <div className="overflow-x-auto">
@@ -32,12 +32,20 @@ const TableTodoList = () => {
           </tr>
         </thead>
         <tbody>
-          {todoList.map((todo: TodoType) => {
-            if (todo.userId === user?.id) {
-              return <TodoItems key={todo.id} todo={todo} />;
-            }
-            return null;
-          })}
+          {todoList.length > 0 ? (
+            todoList.map((todo: TodoType) => {
+              if (todo.userId === user?.id) {
+                return <TodoItems key={todo.id} todo={todo} />;
+              }
+              return null;
+            })
+          ) : (
+            <tr className="text-center">
+              <td colSpan={6} className="text-2xl font-bold">
+                Todo is Empty!
+              </td>
+            </tr>
+          )}
         </tbody>
       </table>
     </div>

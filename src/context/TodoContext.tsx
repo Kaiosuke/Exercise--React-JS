@@ -2,7 +2,8 @@ import { createContext } from "react";
 
 interface TodoContextType {
   todoList: any[];
-  todoId: number | undefined;
+  todoId: number | null;
+  setTodoId: any;
   refAddAndUpdate: any;
   refDelete: any;
   stateTodo: boolean;

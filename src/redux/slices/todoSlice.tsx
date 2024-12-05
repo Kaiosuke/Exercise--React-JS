@@ -8,7 +8,7 @@ interface initialStateState {
   filters: {
     search: string;
     status: string;
-    priority: string[];
+    priorities: string[];
   };
 }
 
@@ -19,7 +19,7 @@ const initialState: initialStateState = {
   filters: {
     search: "",
     status: "All",
-    priority: [],
+    priorities: [],
   },
 };
 
@@ -28,7 +28,6 @@ const todoSlice = createSlice({
   initialState,
   reducers: {
     updateTodo: (state, action) => {
-      console.log(action.payload.id);
       state.todoList = state.todoList.map((todo) =>
         todo.id === action.payload.id ? { ...todo, ...action.payload } : todo
       );
@@ -45,11 +44,14 @@ const todoSlice = createSlice({
       state.filters.status = action.payload;
     },
     filterByPriority: (state, action) => {
-      if (!state.filters.priority.includes(action.payload)) {
-        state.filters.priority = [...state.filters.priority, action.payload];
+      if (!state.filters.priorities.includes(action.payload)) {
+        state.filters.priorities = [
+          ...state.filters.priorities,
+          action.payload,
+        ];
       } else {
-        const index = state.filters.priority.indexOf(action.payload);
-        state.filters.priority.splice(index, 1);
+        const index = state.filters.priorities.indexOf(action.payload);
+        state.filters.priorities.splice(index, 1);
       }
     },
   },
