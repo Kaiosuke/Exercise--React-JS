@@ -23,7 +23,7 @@ const TableTodoList = () => {
       <table className="table">
         <thead>
           <tr>
-            <th></th>
+            <th>Id</th>
             <th>Name</th>
             <th>Description</th>
             <th>Status</th>

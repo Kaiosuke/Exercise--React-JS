@@ -30,8 +30,7 @@ export const todoRemainingSelector = createSelector(
         return (
           todo.title.toLowerCase().includes(search.toLowerCase()) &&
           (status === "Completed" ? todo.status : !todo.status) &&
-          priorities.length &&
-          priorities.includes(todo.priority)
+          (priorities.length ? priorities.includes(todo.priority) : true)
         );
       }
     );
