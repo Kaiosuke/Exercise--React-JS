@@ -1,4 +1,7 @@
+import useCartContext from "@/hooks/useCartContext";
+import { cartListSelector } from "@/redux/selector";
 import React, { useState } from "react";
+import { useSelector } from "react-redux";
 import { NavLink } from "react-router-dom";
 
 interface Products {
@@ -7,13 +10,20 @@ interface Products {
   thumbnail: string;
   title: string;
   description: string;
+  stock: number;
 }
 
 const ProductList: React.FC<{ data: Products; view: string }> = ({
   data,
   view,
 }) => {
-  const { id, thumbnail, price, title, description }: Products = data;
+  const { id, thumbnail, price, title, description, stock }: Products = data;
+
+  const { carts } = useSelector(cartListSelector);
+
+  const findProduct = carts.find((cart) => cart.id === id);
+
+  const { onAddToCart } = useCartContext();
 
   const [loading, setLoading] = useState(true);
 
@@ -46,11 +56,23 @@ const ProductList: React.FC<{ data: Products; view: string }> = ({
           <div className="card-body">
             <NavLink to={`/products/${id}`}>
               <h2 className="card-title hover:underline">{title}</h2>
+              <span>Quantity: {stock}</span>
             </NavLink>
             <p>{description}</p>
             <div className="card-actions flex items-center justify-between">
               <span className="font-bold">{formatMoney(price)}</span>
-              <button className="btn btn-primary btn-sm">Buy Now</button>
+              {findProduct ? (
+                <NavLink to="/carts" className="btn btn-primary btn-sm">
+                  View to Cart
+                </NavLink>
+              ) : (
+                <button
+                  className="btn btn-primary btn-sm"
+                  onClick={() => onAddToCart(id, data)}
+                >
+                  Add to Cart
+                </button>
+              )}
             </div>
           </div>
         </div>
@@ -70,7 +92,7 @@ const ProductList: React.FC<{ data: Products; view: string }> = ({
             <p>{description}</p>
             <span className="font-bold">{formatMoney(price)}</span>
             <div className="card-actions justify-start">
-              <button className="btn btn-primary">Buy Now</button>
+              <button className="btn btn-primary">Add To Cart</button>
             </div>
           </div>
         </div>

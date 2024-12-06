@@ -4,7 +4,7 @@ import { useContext } from "react";
 const useTodoContext = () => {
   const context = useContext(TodoContext);
   if (!context) {
-    throw new Error("Error at todo context");
+    throw new Error("Error at todoContext");
   }
   return context;
 };

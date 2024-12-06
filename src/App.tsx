@@ -15,6 +15,7 @@ import LayoutAuth from "./pages/auth/LayoutAth";
 import Register from "./pages/auth/register/Register";
 import SignIn from "./pages/auth/signIn/SignIn";
 import TodoList from "./pages/todoList/TodoList";
+import Cart from "./pages/Cart/Cart";
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
           <Route path="products/:id" element={<ProductDetail />} />
           <Route path="services" element={<Service />} />
           <Route path="todoList" element={<TodoList />} />
+          <Route path="carts" element={<Cart />} />
         </Route>
         <Route path="/admin" element={<LayoutAdmin />}>
           <Route path="inbox" element={<DbInbox />} />

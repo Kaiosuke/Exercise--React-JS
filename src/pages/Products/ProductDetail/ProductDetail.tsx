@@ -1,4 +1,5 @@
 import { getProduct } from "@/api/requestApi";
+import useCartContext from "@/hooks/useCartContext";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 
@@ -13,6 +14,8 @@ const ProductDetail = () => {
   const [product, setProduct] = useState<Product>();
   const [loading, setLoading] = useState(true);
   const { id } = useParams();
+
+  const { onAddToCart } = useCartContext();
 
   useEffect(() => {
     (async () => {
@@ -48,7 +51,12 @@ const ProductDetail = () => {
           <p>{description}</p>
           <span className="font-bold">{price}</span>
           <div className="card-actions justify-end">
-            <button className="btn btn-primary">Buy Now</button>
+            <button
+              className="btn btn-primary"
+              onClick={() => onAddToCart(Number(id), product)}
+            >
+              Add To Cart
+            </button>
           </div>
         </div>
       </div>

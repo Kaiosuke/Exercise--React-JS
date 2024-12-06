@@ -1,5 +1,6 @@
 import { authSelector } from "@/redux/selector";
 import { logoutSuccess } from "@/redux/slices/authSlice";
+import { FaShoppingCart } from "react-icons/fa";
 import { useDispatch, useSelector } from "react-redux";
 import { NavLink } from "react-router-dom";
 
@@ -45,10 +46,13 @@ const Header = () => {
                 </NavLink>
               </li>
               <li>
-                <NavLink to="/products">Product</NavLink>
+                <NavLink to="/products">Products</NavLink>
               </li>
               <li>
                 <NavLink to="/services">Service</NavLink>
+              </li>
+              <li className="text-xl text-white">
+                <NavLink to="/todoList">TodoList</NavLink>
               </li>
               {user && user.isAdmin && (
                 <li className="text-xl">
@@ -75,22 +79,25 @@ const Header = () => {
               <NavLink to="/">Home</NavLink>
             </li>
             <li className="text-xl text-white">
-              <NavLink to="/products">Product</NavLink>
+              <NavLink to="/products">Products</NavLink>
             </li>
             <li className="text-xl text-white">
               <NavLink to="/services">Service</NavLink>
+            </li>
+            <li className="text-xl text-white">
+              <NavLink to="/todoList">TodoList</NavLink>
             </li>
             {user && user.isAdmin && (
               <li className="text-xl text-white">
                 <NavLink to="/admin">Dashboard</NavLink>
               </li>
             )}
-            <li className="text-xl text-white">
-              <NavLink to="/todoList">TodoList</NavLink>
-            </li>
           </ul>
         </div>
         <div className="navbar-end">
+          <NavLink to="/carts" className="mr-2">
+            <FaShoppingCart className="text-2xl text-white cursor-pointer" />
+          </NavLink>
           {user && (
             <div className="font-bold mr-2">
               {user && !user.isAdmin ? user.name : `Hi Admin: ${user.name}`}

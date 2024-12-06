@@ -98,7 +98,6 @@ const getData = async (path: string, id: number) => {
 const addData = async (path: string, data: any[]) => {
   try {
     const res = await instanceLocal.post(`${path}`, data);
-
     if (res.status !== 201) {
       return false;
     }

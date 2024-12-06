@@ -78,7 +78,7 @@ const Product = () => {
   };
 
   return (
-    <div className="max-w-[1200px] m-auto">
+    <div className="max-full m-auto">
       <div className="flex items-center justify-between">
         <ProductViews view={view} />
         <ProductSearch search={search} handleSearch={handleSearch} />

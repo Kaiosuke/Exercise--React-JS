@@ -4,6 +4,8 @@ import { productsSelector } from "@/redux/selector";
 import { AppDispatch } from "@/redux/store";
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import CartProvider from "./CartProvider";
+import TodoProvider from "./TodoProvider";
 
 const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const dispatch = useDispatch<AppDispatch>();
@@ -49,7 +51,9 @@ const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
 
   return (
     <AppContext.Provider value={{ products: products }}>
-      {children}
+      <TodoProvider>
+        <CartProvider>{children}</CartProvider>
+      </TodoProvider>
     </AppContext.Provider>
   );
 };
