@@ -98,10 +98,10 @@ const getData = async (path: string, id: number) => {
 const addData = async (path: string, data: any[]) => {
   try {
     const res = await instanceLocal.post(`${path}`, data);
-    if (res.status !== 201) {
-      return false;
+    if (res.status === 201) {
+      return true;
     }
-    return true;
+    return false;
   } catch (error) {
     console.log(error);
   }
@@ -110,10 +110,10 @@ const addData = async (path: string, data: any[]) => {
 const updateData = async (path: string, id: number, data: any[]) => {
   try {
     const res = await instanceLocal.patch(`${path}/${id}`, data);
-    if (res.status !== 200) {
-      return false;
+    if (res.status === 200) {
+      return true;
     }
-    return true;
+    return false;
   } catch (error) {
     console.log(error);
   }
@@ -122,10 +122,10 @@ const updateData = async (path: string, id: number, data: any[]) => {
 const deleteData = async (path: string, id: number) => {
   try {
     const res = await instanceLocal.delete(`${path}/${id}`);
-    if (res.status !== 200) {
-      return false;
+    if (res.status === 200) {
+      return true;
     }
-    return true;
+    return false;
   } catch (error) {
     console.log(error);
   }

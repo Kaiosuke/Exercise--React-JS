@@ -6,7 +6,7 @@ import App from "./App.tsx";
 import "./index.css";
 import Providers from "./redux/Provider.tsx";
 import { persistor } from "./redux/store.tsx";
-import AppProvider from "./store/AppProvder.tsx";
+import AppProvider from "./store/AppProvider.tsx";
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
