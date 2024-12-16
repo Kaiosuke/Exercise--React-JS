@@ -4,21 +4,25 @@ import { FaHome, FaPlus, FaTrash } from "react-icons/fa";
 import { ImBookmarks } from "react-icons/im";
 import { IoIosSettings } from "react-icons/io";
 import { Link } from "react-router-dom";
-import { addData, deleteData, getDataList, updateData } from "@/api/requestApi";
 import DbProductList from "./DbProductList";
 
+import {
+  addDbProduct,
+  deleteDbProduct,
+  getProducts,
+  updateDbProduct,
+} from "@/api/productApi";
+import DbModelAdd from "@/components/DbModelAdd";
+import DbModelDelete from "@/components/DbModelDelete";
+import DbModelUpdate from "@/components/DbModelUpdate";
+import Loading from "@/components/Loading";
+import { dataListSelector } from "@/redux/selector";
+import { AppDispatch } from "@/redux/store";
 import { GrFormNext, GrFormPrevious } from "react-icons/gr";
 import ReactPaginate from "react-paginate";
 import { useDispatch, useSelector } from "react-redux";
-import { AppDispatch } from "@/redux/store";
-import { dataListSelector } from "@/redux/selector";
-import Loading from "@/components/Loading";
-import DbModelDelete from "@/components/DbModelDelete";
-import DbModelAdd from "@/components/DbModelAdd";
-import DbModelUpdate from "@/components/DbModelUpdate";
 
 const DbProduct = () => {
-  const [stateProduct, setStateProduct] = useState(false);
   const [productId, setProductId] = useState<number | null>(null);
   const [currentPage, setCurrentPage] = useState(0);
   const itemsPerPage = 16;
@@ -30,8 +34,8 @@ const DbProduct = () => {
   const dispatch = useDispatch<AppDispatch>();
 
   useEffect(() => {
-    dispatch(getDataList("products"));
-  }, [dispatch, stateProduct]);
+    dispatch(getProducts("products"));
+  }, [dispatch]);
 
   const { dataList, isLoading } = useSelector(dataListSelector);
 
@@ -46,10 +50,7 @@ const DbProduct = () => {
   };
 
   const handleAdd = async (product: any) => {
-    const isAdd = addData("products", product);
-    if (await isAdd) {
-      setStateProduct(!stateProduct);
-    }
+    dispatch(addDbProduct({ path: "products", data: product }));
   };
 
   const handleShowUpdate = (id: number) => {
@@ -59,16 +60,9 @@ const DbProduct = () => {
 
   const handleUpdate = async (product: any) => {
     if (productId) {
-      const isUpdate = updateData("products", productId, product);
-      if (await isUpdate) {
-        const newProducts: any = products.map((item: { id: number }) => {
-          if (item.id === product.id) {
-            return { ...product };
-          }
-          return { ...item };
-        });
-        setProducts(newProducts);
-      }
+      dispatch(
+        updateDbProduct({ path: "products", id: productId, data: product })
+      );
     }
   };
 
@@ -79,13 +73,7 @@ const DbProduct = () => {
 
   const handleDelete = async () => {
     if (productId) {
-      const isDelete = deleteData("products", productId);
-      if (await isDelete) {
-        const newProducts: any = products.filter((product: { id: number }) => {
-          return product.id !== productId;
-        });
-        setProducts(newProducts);
-      }
+      dispatch(deleteDbProduct({ path: "products", id: productId }));
     }
   };
 
@@ -203,7 +191,6 @@ const DbProduct = () => {
             marginPagesDisplayed={2}
             pageRangeDisplayed={5}
             onPageChange={handlePageClick}
-            // activeClassName={"active"}
             pageLinkClassName={"page-link"}
             containerClassName={"pagination"}
           />

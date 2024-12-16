@@ -21,7 +21,7 @@ const ProductList: React.FC<{ data: Products; view: string }> = ({
 
   const { carts } = useSelector(cartListSelector);
 
-  const findProduct = carts.find((cart) => cart.id === id);
+  const findProduct = carts && carts.find((cart) => cart.id === id);
 
   const { onAddToCart } = useCartContext();
 

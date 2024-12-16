@@ -5,11 +5,8 @@ const getCartList = createAsyncThunk(
   "cart/getCartList",
   async ({ id }: { id: number }) => {
     try {
-      const res = await instanceLocal.get("/carts");
-      const data = res.data.filter(
-        (cart: { userId: number }): any => cart.userId === id
-      );
-      return data;
+      const res = await instanceLocal.get(`/carts?userId=${id}`);
+      return res.data;
     } catch (error) {
       console.log(error);
     }

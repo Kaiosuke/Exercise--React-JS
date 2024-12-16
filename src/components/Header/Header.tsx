@@ -54,6 +54,7 @@ const Header = () => {
               <li className="text-xl text-white">
                 <NavLink to="/todoList">TodoList</NavLink>
               </li>
+
               {user && user.isAdmin && (
                 <li className="text-xl">
                   <NavLink to="/admin">Dashboard</NavLink>

@@ -6,6 +6,7 @@ import Pages from "./pages/Admin/DbPages/Pages";
 import DbProduct from "./pages/Admin/DbProduct/DbProduct";
 import DbUser from "./pages/Admin/DbUser/DbUser";
 import LayoutAdmin from "./pages/Admin/LayouAdmin";
+import Cart from "./pages/Cart/Cart";
 import Home from "./pages/Home/Home";
 import ProductDetail from "./pages/Products/ProductDetail/ProductDetail";
 import Products from "./pages/Products/Products";
@@ -15,7 +16,6 @@ import LayoutAuth from "./pages/auth/LayoutAth";
 import Register from "./pages/auth/register/Register";
 import SignIn from "./pages/auth/signIn/SignIn";
 import TodoList from "./pages/todoList/TodoList";
-import Cart from "./pages/Cart/Cart";
 
 function App() {
   return (

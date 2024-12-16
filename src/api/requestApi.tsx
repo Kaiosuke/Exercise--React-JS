@@ -1,10 +1,10 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
-import { instanceDummy, instanceLocal } from "./instance";
 import {
   loginFailed,
   loginStart,
   loginSuccess,
 } from "../redux/slices/authSlice";
+import { instanceDummy, instanceLocal } from "./instance";
 
 const register = async (data: any[]) => {
   try {
@@ -33,7 +33,7 @@ const login = async (data: any[], dispatch: any) => {
 
 const getProduct = async (path: string, id: number) => {
   try {
-    const res = await instanceDummy.get(`${path}/${id}`);
+    const res = await instanceDummy.get(`${path} /${id}`);
     return res.data;
   } catch (error) {
     console.log(error);
@@ -42,21 +42,24 @@ const getProduct = async (path: string, id: number) => {
 
 const getAllProducts = createAsyncThunk(
   "products/getAllProducts",
-  async ({
-    path,
-    search,
-    limit,
-    skip,
-    sortBy,
-    order,
-  }: {
-    path: string;
-    search: string;
-    limit: number;
-    skip: number;
-    sortBy: number | string;
-    order: number | string;
-  }) => {
+  async (
+    {
+      path,
+      search,
+      limit,
+      skip,
+      sortBy,
+      order,
+    }: {
+      path: string;
+      search: string;
+      limit: number;
+      skip: number;
+      sortBy: number | string;
+      order: number | string;
+    },
+    { rejectWithValue }
+  ) => {
     try {
       const res = await instanceDummy.get(`${path}/search`, {
         params: {
@@ -68,8 +71,11 @@ const getAllProducts = createAsyncThunk(
         },
       });
       return res.data;
-    } catch (error) {
-      console.log(error);
+    } catch (error: any) {
+      if (!error.response) {
+        throw error;
+      }
+      return rejectWithValue(error.response.data);
     }
   }
 );
@@ -132,13 +138,13 @@ const deleteData = async (path: string, id: number) => {
 };
 
 export {
-  register,
-  login,
   addData,
   deleteData,
   getAllProducts,
   getData,
   getDataList,
   getProduct,
+  login,
+  register,
   updateData,
 };
