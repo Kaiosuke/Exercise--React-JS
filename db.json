@@ -18,68 +18,8 @@
   ],
   "products": [
     {
-      "id": 5,
-      "title": "Red1212",
-      "description": "The Red Nail Polish offers a rich and glossy red hue for vibrant and polished nails. With a quick-drying formula, it provides a salon-quality finish at home.",
-      "category": "beauty",
-      "price": 8.99,
-      "discountPercentage": 2.46,
-      "rating": 3.91,
-      "stock": 71,
-      "tags": [
-        "beauty",
-        "nail polish"
-      ],
-      "brand": "Nail Couture",
-      "sku": "YUIIIP4W",
-      "weight": 9,
-      "dimensions": {
-        "width": 8.11,
-        "height": 10.89,
-        "depth": 29.06
-      },
-      "warrantyInformation": "1 year warranty",
-      "shippingInformation": "Ships in 1 week",
-      "availabilityStatus": "In Stock",
-      "reviews": [
-        {
-          "rating": 5,
-          "comment": "Very pleased!",
-          "date": "2024-05-23T08:56:21.619Z",
-          "reviewerName": "Leo Rivera",
-          "reviewerEmail": "leo.rivera@x.dummyjson.com"
-        },
-        {
-          "rating": 5,
-          "comment": "Great product!",
-          "date": "2024-05-23T08:56:21.619Z",
-          "reviewerName": "Evan Reed",
-          "reviewerEmail": "evan.reed@x.dummyjson.com"
-        },
-        {
-          "rating": 4,
-          "comment": "Highly recommended!",
-          "date": "2024-05-23T08:56:21.619Z",
-          "reviewerName": "Evelyn Sanchez",
-          "reviewerEmail": "evelyn.sanchez@x.dummyjson.com"
-        }
-      ],
-      "returnPolicy": "No return policy",
-      "minimumOrderQuantity": 46,
-      "meta": {
-        "createdAt": "2024-05-23T08:56:21.619Z",
-        "updatedAt": "2024-05-23T08:56:21.619Z",
-        "barcode": "3212847902461",
-        "qrCode": "https://assets.dummyjson.com/public/qr-code.png"
-      },
-      "images": [
-        "https://cdn.dummyjson.com/products/images/beauty/Red%20Nail%20Polish/1.png"
-      ],
-      "thumbnail": "https://cdn.dummyjson.com/products/images/beauty/Red%20Nail%20Polish/thumbnail.png"
-    },
-    {
       "id": 12,
-      "title": "Annibale Colombo Sofa",
+      "title": "Annibale Colombo3123",
       "description": "The Annibale Colombo Sofa is a sophisticated and comfortable seating option, featuring exquisite design and premium upholstery for your living room.",
       "category": "furniture",
       "price": 2499.99,
@@ -138,130 +78,6 @@
         "https://cdn.dummyjson.com/products/images/furniture/Annibale%20Colombo%20Sofa/3.png"
       ],
       "thumbnail": "https://cdn.dummyjson.com/products/images/furniture/Annibale%20Colombo%20Sofa/thumbnail.png"
-    },
-    {
-      "id": 13,
-      "title": "Bedside Table African Cherryewqeqw",
-      "description": "The Bedside Table in African Cherry is a stylish and functional addition to your bedroom, providing convenient storage space and a touch of elegance.",
-      "category": "furniture",
-      "price": 299.99,
-      "discountPercentage": 9.58,
-      "rating": 4.48,
-      "stock": 16,
-      "tags": [
-        "furniture",
-        "bedside tables"
-      ],
-      "brand": "Furniture Co.",
-      "sku": "OWPLTZYX",
-      "weight": 10,
-      "dimensions": {
-        "width": 25.43,
-        "height": 20.2,
-        "depth": 24.95
-      },
-      "warrantyInformation": "6 months warranty",
-      "shippingInformation": "Ships in 1-2 business days",
-      "availabilityStatus": "In Stock",
-      "reviews": [
-        {
-          "rating": 5,
-          "comment": "Very happy with my purchase!",
-          "date": "2024-05-23T08:56:21.620Z",
-          "reviewerName": "John Doe",
-          "reviewerEmail": "john.doe@x.dummyjson.com"
-        },
-        {
-          "rating": 4,
-          "comment": "Highly recommended!",
-          "date": "2024-05-23T08:56:21.620Z",
-          "reviewerName": "Avery Carter",
-          "reviewerEmail": "avery.carter@x.dummyjson.com"
-        },
-        {
-          "rating": 4,
-          "comment": "Very pleased!",
-          "date": "2024-05-23T08:56:21.620Z",
-          "reviewerName": "Evelyn Sanchez",
-          "reviewerEmail": "evelyn.sanchez@x.dummyjson.com"
-        }
-      ],
-      "returnPolicy": "No return policy",
-      "minimumOrderQuantity": 5,
-      "meta": {
-        "createdAt": "2024-05-23T08:56:21.620Z",
-        "updatedAt": "2024-05-23T08:56:21.620Z",
-        "barcode": "2913244159666",
-        "qrCode": "https://assets.dummyjson.com/public/qr-code.png"
-      },
-      "images": [
-        "https://cdn.dummyjson.com/products/images/furniture/Bedside%20Table%20African%20Cherry/1.png",
-        "https://cdn.dummyjson.com/products/images/furniture/Bedside%20Table%20African%20Cherry/2.png",
-        "https://cdn.dummyjson.com/products/images/furniture/Bedside%20Table%20African%20Cherry/3.png"
-      ],
-      "thumbnail": "https://cdn.dummyjson.com/products/images/furniture/Bedside%20Table%20African%20Cherry/thumbnail.png"
-    },
-    {
-      "id": 14,
-      "title": "Knoll Saarinen Executive Conference Chair321321",
-      "description": "The Knoll Saarinen Executive Conference Chair is a modern and ergonomic chair, perfect for your office or conference room with its timeless design.",
-      "category": "furniture",
-      "price": 499.99,
-      "discountPercentage": 15.23,
-      "rating": 4.11,
-      "stock": 47,
-      "tags": [
-        "furniture",
-        "office chairs"
-      ],
-      "brand": "Knoll",
-      "sku": "RKHVJ4FE",
-      "weight": 3,
-      "dimensions": {
-        "width": 16.59,
-        "height": 21.46,
-        "depth": 29.07
-      },
-      "warrantyInformation": "Lifetime warranty",
-      "shippingInformation": "Ships in 3-5 business days",
-      "availabilityStatus": "In Stock",
-      "reviews": [
-        {
-          "rating": 4,
-          "comment": "Very happy with my purchase!",
-          "date": "2024-05-23T08:56:21.620Z",
-          "reviewerName": "Leah Gutierrez",
-          "reviewerEmail": "leah.gutierrez@x.dummyjson.com"
-        },
-        {
-          "rating": 4,
-          "comment": "Would buy again!",
-          "date": "2024-05-23T08:56:21.620Z",
-          "reviewerName": "Nolan Gonzalez",
-          "reviewerEmail": "nolan.gonzalez@x.dummyjson.com"
-        },
-        {
-          "rating": 2,
-          "comment": "Waste of money!",
-          "date": "2024-05-23T08:56:21.620Z",
-          "reviewerName": "Stella Morris",
-          "reviewerEmail": "stella.morris@x.dummyjson.com"
-        }
-      ],
-      "returnPolicy": "30 days return policy",
-      "minimumOrderQuantity": 5,
-      "meta": {
-        "createdAt": "2024-05-23T08:56:21.620Z",
-        "updatedAt": "2024-05-23T08:56:21.620Z",
-        "barcode": "0726316339746",
-        "qrCode": "https://assets.dummyjson.com/public/qr-code.png"
-      },
-      "images": [
-        "https://cdn.dummyjson.com/products/images/furniture/Knoll%20Saarinen%20Executive%20Conference%20Chair/1.png",
-        "https://cdn.dummyjson.com/products/images/furniture/Knoll%20Saarinen%20Executive%20Conference%20Chair/2.png",
-        "https://cdn.dummyjson.com/products/images/furniture/Knoll%20Saarinen%20Executive%20Conference%20Chair/3.png"
-      ],
-      "thumbnail": "https://cdn.dummyjson.com/products/images/furniture/Knoll%20Saarinen%20Executive%20Conference%20Chair/thumbnail.png"
     },
     {
       "id": 15,
@@ -384,66 +200,8 @@
       "thumbnail": "https://cdn.dummyjson.com/products/images/groceries/Apple/thumbnail.png"
     },
     {
-      "id": 17,
-      "title": "Beef Steak",
-      "description": "High-quality beef steak, great for grilling or cooking to your preferred level of doneness.",
-      "category": "groceries",
-      "price": 12.99,
-      "discountPercentage": 17.99,
-      "rating": 2.83,
-      "stock": 96,
-      "tags": [
-        "meat"
-      ],
-      "sku": "BWWA2MSO",
-      "weight": 9,
-      "dimensions": {
-        "width": 23.35,
-        "height": 13.48,
-        "depth": 26.4
-      },
-      "warrantyInformation": "1 month warranty",
-      "shippingInformation": "Ships overnight",
-      "availabilityStatus": "In Stock",
-      "reviews": [
-        {
-          "rating": 4,
-          "comment": "Very pleased!",
-          "date": "2024-05-23T08:56:21.620Z",
-          "reviewerName": "Ethan Martinez",
-          "reviewerEmail": "ethan.martinez@x.dummyjson.com"
-        },
-        {
-          "rating": 3,
-          "comment": "Disappointing product!",
-          "date": "2024-05-23T08:56:21.620Z",
-          "reviewerName": "Owen Fisher",
-          "reviewerEmail": "owen.fisher@x.dummyjson.com"
-        },
-        {
-          "rating": 4,
-          "comment": "Very happy with my purchase!",
-          "date": "2024-05-23T08:56:21.620Z",
-          "reviewerName": "Scarlett Wright",
-          "reviewerEmail": "scarlett.wright@x.dummyjson.com"
-        }
-      ],
-      "returnPolicy": "90 days return policy",
-      "minimumOrderQuantity": 21,
-      "meta": {
-        "createdAt": "2024-05-23T08:56:21.620Z",
-        "updatedAt": "2024-05-23T08:56:21.620Z",
-        "barcode": "8335515097879",
-        "qrCode": "https://assets.dummyjson.com/public/qr-code.png"
-      },
-      "images": [
-        "https://cdn.dummyjson.com/products/images/groceries/Beef%20Steak/1.png"
-      ],
-      "thumbnail": "https://cdn.dummyjson.com/products/images/groceries/Beef%20Steak/thumbnail.png"
-    },
-    {
       "id": 18,
-      "title": "Cat Food",
+      "title": "Cat Food22",
       "description": "Nutritious cat food formulated to meet the dietary needs of your feline friend.",
       "category": "groceries",
       "price": 8.99,
@@ -677,7 +435,7 @@
     },
     {
       "id": 22,
-      "title": "Dog Food",
+      "title": "Dog Foode21",
       "description": "Specially formulated dog food designed to provide essential nutrients for your canine companion.",
       "category": "groceries",
       "price": 10.99,
@@ -1272,13 +1030,6 @@
       "id": 42
     },
     {
-      "title": "rte212",
-      "category": "12",
-      "price": 12,
-      "stock": 12,
-      "id": 43
-    },
-    {
       "title": "ewq2321",
       "category": "12",
       "price": 21,
@@ -1293,53 +1044,25 @@
       "id": 45
     },
     {
-      "title": "dsa21232",
-      "category": "12",
-      "price": 321,
-      "stock": 321,
+      "title": "asdasdas",
+      "category": "1231231",
+      "price": 312312,
+      "stock": 3123,
       "id": 46
     },
     {
-      "title": "dá321312",
-      "category": "123",
-      "price": 231,
-      "stock": 321,
+      "title": "321312312",
+      "category": "123123",
+      "price": 123123,
+      "stock": 3123,
       "id": 47
     },
     {
-      "title": "đasadas",
-      "category": "1232",
-      "price": 1312,
-      "stock": 3232,
+      "title": "aassadazzz",
+      "category": "123123",
+      "price": 13,
+      "stock": 12312,
       "id": 48
-    },
-    {
-      "title": "2313213",
-      "category": "321",
-      "price": 231,
-      "stock": 32,
-      "id": 49
-    },
-    {
-      "title": "addsada",
-      "category": "312312",
-      "price": 12312,
-      "stock": 312,
-      "id": 50
-    },
-    {
-      "title": "dadasd212",
-      "category": "12312321312",
-      "price": 3123,
-      "stock": 312,
-      "id": 52
-    },
-    {
-      "title": "3213123123adasdas",
-      "category": "1232",
-      "price": 3123123,
-      "stock": 321,
-      "id": 53
     }
   ],
   "todos": [
@@ -1363,7 +1086,7 @@
       "title": "das212",
       "description": "das",
       "priority": "High",
-      "status": true,
+      "status": false,
       "userId": 1,
       "id": 10
     },

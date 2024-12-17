@@ -6,6 +6,7 @@ import { createSelector } from "@reduxjs/toolkit";
 const authSelector = (state: RootState): AuthType => state.authSlice;
 const productsSelector = (state: RootState) => state.productsSlice;
 const dataListSelector = (state: RootState) => state.dataSlice;
+const productListSelector = (state: RootState) => state.dbProductSlice;
 const cartListSelector = (state: RootState): CartType => state.cartSlice;
 const todoListSelector = (state: RootState): any => state.todoSlice;
 const todoSearchSelector = (state: RootState) => state.todoSlice.filters.search;
@@ -43,4 +44,5 @@ export {
   authSelector,
   todoListSelector,
   cartListSelector,
+  productListSelector,
 };

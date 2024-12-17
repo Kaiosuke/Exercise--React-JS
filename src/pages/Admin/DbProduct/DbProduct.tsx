@@ -16,7 +16,7 @@ import DbModelAdd from "@/components/DbModelAdd";
 import DbModelDelete from "@/components/DbModelDelete";
 import DbModelUpdate from "@/components/DbModelUpdate";
 import Loading from "@/components/Loading";
-import { dataListSelector } from "@/redux/selector";
+import { productListSelector } from "@/redux/selector";
 import { AppDispatch } from "@/redux/store";
 import { GrFormNext, GrFormPrevious } from "react-icons/gr";
 import ReactPaginate from "react-paginate";
@@ -37,7 +37,7 @@ const DbProduct = () => {
     dispatch(getProducts("products"));
   }, [dispatch]);
 
-  const { dataList, isLoading } = useSelector(dataListSelector);
+  const { dataList, isLoading, error } = useSelector(productListSelector);
 
   const [products, setProducts] = useState(dataList);
 
@@ -64,6 +64,7 @@ const DbProduct = () => {
         updateDbProduct({ path: "products", id: productId, data: product })
       );
     }
+    setProductId(null);
   };
 
   const handleShowMdDelete = (id: number) => {
@@ -75,6 +76,7 @@ const DbProduct = () => {
     if (productId) {
       dispatch(deleteDbProduct({ path: "products", id: productId }));
     }
+    setProductId(null);
   };
 
   const offset = currentPage * itemsPerPage;
@@ -90,6 +92,10 @@ const DbProduct = () => {
         <Loading />
       </div>
     );
+  }
+
+  if (error) {
+    return <div>{error}</div>;
   }
 
   return (

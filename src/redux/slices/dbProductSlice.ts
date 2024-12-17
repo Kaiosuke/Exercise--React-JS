@@ -18,8 +18,8 @@ const initialState: DataStateType = {
   error: null,
 };
 
-const dataSlice = createSlice({
-  name: "dataSlice",
+const dbProductSlice = createSlice({
+  name: "dataList",
   initialState,
   reducers: {},
   extraReducers: (builder) => {
@@ -58,7 +58,8 @@ const dataSlice = createSlice({
         );
       });
     builder.addCase(updateDbProduct.rejected, (state, action) => {
-      state.isLoading = false;
+      console.log(action.error);
+      state.isLoading = true;
       state.error = action.error.message;
     });
     builder
@@ -78,4 +79,4 @@ const dataSlice = createSlice({
   },
 });
 
-export default dataSlice.reducer;
+export default dbProductSlice.reducer;

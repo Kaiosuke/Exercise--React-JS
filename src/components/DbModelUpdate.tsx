@@ -39,7 +39,6 @@ const DbModelUpdate = forwardRef<HTMLDialogElement, DbModelUpdateProps>(
       (async () => {
         if (id) {
           const data = await getData("products", id);
-          console.log(1);
           setProduct(data);
           methods.reset(data);
         }

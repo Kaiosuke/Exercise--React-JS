@@ -133,7 +133,7 @@ const deleteData = async (path: string, id: number) => {
     }
     return true;
   } catch (error) {
-    console.log(error);
+    // console.log(error);
   }
 };
 
