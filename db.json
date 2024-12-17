@@ -19,7 +19,7 @@
   "products": [
     {
       "id": 12,
-      "title": "Annibale Colombo3123",
+      "title": "Annibale Colombo31231112",
       "description": "The Annibale Colombo Sofa is a sophisticated and comfortable seating option, featuring exquisite design and premium upholstery for your living room.",
       "category": "furniture",
       "price": 2499.99,
@@ -140,64 +140,6 @@
         "https://cdn.dummyjson.com/products/images/furniture/Wooden%20Bathroom%20Sink%20With%20Mirror/3.png"
       ],
       "thumbnail": "https://cdn.dummyjson.com/products/images/furniture/Wooden%20Bathroom%20Sink%20With%20Mirror/thumbnail.png"
-    },
-    {
-      "id": 16,
-      "title": "Apple",
-      "description": "Fresh and crisp apples, perfect for snacking or incorporating into various recipes.",
-      "category": "groceries",
-      "price": 1.99,
-      "discountPercentage": 1.97,
-      "rating": 2.96,
-      "stock": 9,
-      "tags": [
-        "fruits"
-      ],
-      "sku": "QTROUV79",
-      "weight": 8,
-      "dimensions": {
-        "width": 8.29,
-        "height": 5.58,
-        "depth": 12.41
-      },
-      "warrantyInformation": "2 year warranty",
-      "shippingInformation": "Ships in 2 weeks",
-      "availabilityStatus": "In Stock",
-      "reviews": [
-        {
-          "rating": 4,
-          "comment": "Great product!",
-          "date": "2024-05-23T08:56:21.620Z",
-          "reviewerName": "Logan Lee",
-          "reviewerEmail": "logan.lee@x.dummyjson.com"
-        },
-        {
-          "rating": 4,
-          "comment": "Great product!",
-          "date": "2024-05-23T08:56:21.620Z",
-          "reviewerName": "Elena Long",
-          "reviewerEmail": "elena.long@x.dummyjson.com"
-        },
-        {
-          "rating": 1,
-          "comment": "Not as described!",
-          "date": "2024-05-23T08:56:21.620Z",
-          "reviewerName": "Grayson Coleman",
-          "reviewerEmail": "grayson.coleman@x.dummyjson.com"
-        }
-      ],
-      "returnPolicy": "60 days return policy",
-      "minimumOrderQuantity": 44,
-      "meta": {
-        "createdAt": "2024-05-23T08:56:21.620Z",
-        "updatedAt": "2024-05-23T08:56:21.620Z",
-        "barcode": "2517819903837",
-        "qrCode": "https://assets.dummyjson.com/public/qr-code.png"
-      },
-      "images": [
-        "https://cdn.dummyjson.com/products/images/groceries/Apple/1.png"
-      ],
-      "thumbnail": "https://cdn.dummyjson.com/products/images/groceries/Apple/thumbnail.png"
     },
     {
       "id": 18,
@@ -1063,6 +1005,13 @@
       "price": 13,
       "stock": 12312,
       "id": 48
+    },
+    {
+      "title": "321321321aaa",
+      "category": "312312",
+      "price": 123123,
+      "stock": 3123,
+      "id": 49
     }
   ],
   "todos": [
