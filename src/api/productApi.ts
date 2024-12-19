@@ -59,22 +59,26 @@ const updateDbProduct = createAsyncThunk<
   }
 });
 
-const deleteDbProduct = createAsyncThunk<
-  IProducts,
-  { path: string; id: number }
->("dataList/deleteData", async ({ path, id }, { rejectWithValue }) => {
-  try {
-    const res = await instanceLocal.delete(`${path}/${id}`);
-    if (res.status === 200) {
-      return res.data;
+const deleteDbProduct = createAsyncThunk<number, { path: string; id: number }>(
+  "dataList/deleteData",
+  async ({ path, id }, { rejectWithValue }) => {
+    try {
+      const res = await instanceLocal.delete(`${path}/${id}`);
+      if (res.status === 200) {
+        return id;
+      } else {
+        return rejectWithValue("Failed to delete data");
+      }
+    } catch (error: unknown) {
+      const axiosError = error as AxiosError;
+      if (!axiosError.response) {
+        throw error;
+      }
+      return rejectWithValue(
+        axiosError.response.data || "Failed to delete data"
+      );
     }
-  } catch (error: unknown) {
-    const axiosError = error as AxiosError;
-    if (!axiosError.response) {
-      throw error;
-    }
-    return rejectWithValue(axiosError.response.data || "Failed to delete data");
   }
-});
+);
 
 export { addDbProduct, deleteDbProduct, getProducts, updateDbProduct };

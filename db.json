@@ -21,74 +21,19 @@
       "name": "321312312312",
       "confirmPassword": "trongle2001",
       "id": 3
+    },
+    {
+      "email": "trongleele12@gmail.com",
+      "password": "$2a$10$eAncGvFbtn5KgeX5pCohueIu.8NHZ26GR1VKczJV727mnUssd1EP.",
+      "name": "312312312",
+      "confirmPassword": "trongle2001",
+      "id": 4
     }
   ],
   "products": [
     {
-      "id": 12,
-      "title": "Annibale Colombo31231112asa11",
-      "description": "The Annibale Colombo Sofa is a sophisticated and comfortable seating option, featuring exquisite design and premium upholstery for your living room.",
-      "category": "furniture",
-      "price": 2499.99,
-      "discountPercentage": 18.54,
-      "rating": 3.08,
-      "stock": 16,
-      "tags": [
-        "furniture",
-        "sofas"
-      ],
-      "brand": "Annibale Colombo",
-      "sku": "LUU95CQP",
-      "weight": 3,
-      "dimensions": {
-        "width": 20.97,
-        "height": 19.11,
-        "depth": 25.81
-      },
-      "warrantyInformation": "1 month warranty",
-      "shippingInformation": "Ships overnight",
-      "availabilityStatus": "In Stock",
-      "reviews": [
-        {
-          "rating": 5,
-          "comment": "Very satisfied!",
-          "date": "2024-05-23T08:56:21.620Z",
-          "reviewerName": "Tyler Davis",
-          "reviewerEmail": "tyler.davis@x.dummyjson.com"
-        },
-        {
-          "rating": 5,
-          "comment": "Excellent quality!",
-          "date": "2024-05-23T08:56:21.620Z",
-          "reviewerName": "Hannah Robinson",
-          "reviewerEmail": "hannah.robinson@x.dummyjson.com"
-        },
-        {
-          "rating": 3,
-          "comment": "Waste of money!",
-          "date": "2024-05-23T08:56:21.620Z",
-          "reviewerName": "Madison Collins",
-          "reviewerEmail": "madison.collins@x.dummyjson.com"
-        }
-      ],
-      "returnPolicy": "7 days return policy",
-      "minimumOrderQuantity": 1,
-      "meta": {
-        "createdAt": "2024-05-23T08:56:21.620Z",
-        "updatedAt": "2024-05-23T08:56:21.620Z",
-        "barcode": "0426785817074",
-        "qrCode": "https://assets.dummyjson.com/public/qr-code.png"
-      },
-      "images": [
-        "https://cdn.dummyjson.com/products/images/furniture/Annibale%20Colombo%20Sofa/1.png",
-        "https://cdn.dummyjson.com/products/images/furniture/Annibale%20Colombo%20Sofa/2.png",
-        "https://cdn.dummyjson.com/products/images/furniture/Annibale%20Colombo%20Sofa/3.png"
-      ],
-      "thumbnail": "https://cdn.dummyjson.com/products/images/furniture/Annibale%20Colombo%20Sofa/thumbnail.png"
-    },
-    {
       "id": 15,
-      "title": "Wooden Bathroom Sink With Mirror321",
+      "title": "Wooden Bathroom Sink With Mirror3211",
       "description": "The Wooden Bathroom Sink with Mirror is a unique and stylish addition to your bathroom, featuring a wooden sink countertop and a matching mirror.",
       "category": "furniture",
       "price": 799.99,
@@ -323,64 +268,6 @@
         "https://cdn.dummyjson.com/products/images/groceries/Cooking%20Oil/1.png"
       ],
       "thumbnail": "https://cdn.dummyjson.com/products/images/groceries/Cooking%20Oil/thumbnail.png"
-    },
-    {
-      "id": 21,
-      "title": "Cucumber",
-      "description": "Crisp and hydrating cucumbers, ideal for salads, snacks, or as a refreshing side.",
-      "category": "groceries",
-      "price": 1.49,
-      "discountPercentage": 11.44,
-      "rating": 4.71,
-      "stock": 22,
-      "tags": [
-        "vegetables"
-      ],
-      "sku": "6KGF2K6Z",
-      "weight": 9,
-      "dimensions": {
-        "width": 11.04,
-        "height": 20.5,
-        "depth": 8.18
-      },
-      "warrantyInformation": "5 year warranty",
-      "shippingInformation": "Ships overnight",
-      "availabilityStatus": "In Stock",
-      "reviews": [
-        {
-          "rating": 4,
-          "comment": "Very satisfied!",
-          "date": "2024-05-23T08:56:21.620Z",
-          "reviewerName": "Elijah Hill",
-          "reviewerEmail": "elijah.hill@x.dummyjson.com"
-        },
-        {
-          "rating": 5,
-          "comment": "Fast shipping!",
-          "date": "2024-05-23T08:56:21.620Z",
-          "reviewerName": "Liam Garcia",
-          "reviewerEmail": "liam.garcia@x.dummyjson.com"
-        },
-        {
-          "rating": 4,
-          "comment": "Excellent quality!",
-          "date": "2024-05-23T08:56:21.620Z",
-          "reviewerName": "Ella Cook",
-          "reviewerEmail": "ella.cook@x.dummyjson.com"
-        }
-      ],
-      "returnPolicy": "30 days return policy",
-      "minimumOrderQuantity": 7,
-      "meta": {
-        "createdAt": "2024-05-23T08:56:21.620Z",
-        "updatedAt": "2024-05-23T08:56:21.620Z",
-        "barcode": "2597004869708",
-        "qrCode": "https://assets.dummyjson.com/public/qr-code.png"
-      },
-      "images": [
-        "https://cdn.dummyjson.com/products/images/groceries/Cucumber/1.png"
-      ],
-      "thumbnail": "https://cdn.dummyjson.com/products/images/groceries/Cucumber/thumbnail.png"
     },
     {
       "id": 22,
@@ -970,55 +857,6 @@
       "price": 312,
       "stock": 3123,
       "id": 41
-    },
-    {
-      "title": "sadasdas",
-      "category": "321321",
-      "price": 32,
-      "stock": 32,
-      "id": 42
-    },
-    {
-      "title": "ewq2321",
-      "category": "12",
-      "price": 21,
-      "stock": 12,
-      "id": 44
-    },
-    {
-      "title": "21312312",
-      "category": "12",
-      "price": 12,
-      "stock": 12,
-      "id": 45
-    },
-    {
-      "title": "asdasdas",
-      "category": "1231231",
-      "price": 312312,
-      "stock": 3123,
-      "id": 46
-    },
-    {
-      "title": "321312312",
-      "category": "123123",
-      "price": 123123,
-      "stock": 3123,
-      "id": 47
-    },
-    {
-      "title": "aassadazzz",
-      "category": "123123",
-      "price": 13,
-      "stock": 12312,
-      "id": 48
-    },
-    {
-      "title": "3213123",
-      "category": "321312",
-      "price": 2312,
-      "stock": 3123,
-      "id": 49
     }
   ],
   "todos": [
