@@ -1,11 +1,14 @@
 import { zodResolver } from "@hookform/resolvers/zod";
 import { FormProvider, useForm } from "react-hook-form";
 import { NavLink, useNavigate } from "react-router-dom";
-import { register } from "@/api/requestApi";
 import { registerForm } from "@/reactHookForm";
 import { useState } from "react";
 import { IoEyeSharp } from "react-icons/io5";
 import { FaEyeSlash } from "react-icons/fa";
+import { register } from "@/api/authApi";
+import { IUser } from "@/interfaces";
+import { useDispatch } from "react-redux";
+import { AppDispatch } from "@/redux/store";
 
 const Register = () => {
   const methods = useForm({
@@ -21,18 +24,19 @@ const Register = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setConfirmShowPassword] = useState(false);
 
-  const navigate = useNavigate();
+  const nav = useNavigate();
 
-  const handleSubmit = async (data: any) => {
-    const isRegister = await register(data);
+  const dispatch = useDispatch<AppDispatch>();
 
-    if (isRegister.status === 400) {
-      window.alert(isRegister.message);
-      return;
-    }
-    methods.reset();
-    window.alert("Register Success");
-    navigate("/users/signIn");
+  const handleSubmit = async (user: IUser) => {
+    (async () => {
+      try {
+        await dispatch(register(user)).unwrap();
+        nav("/users/signIn");
+      } catch (error) {
+        alert(error);
+      }
+    })();
   };
 
   const handleShowPassWord = () => {

@@ -1,18 +1,14 @@
+import { login } from "@/api/authApi";
+import { IUser } from "@/interfaces";
 import { createSlice } from "@reduxjs/toolkit";
 
 export interface AuthType {
   isLoading: boolean;
   currentUser: {
     accessToken?: string | null;
-    user?:
-      | {
-          name: string;
-          isAdmin?: boolean;
-          id: number;
-        }
-      | undefined;
+    user?: IUser | undefined;
   };
-  error: string | null;
+  error: null | unknown;
 }
 
 const initialState: AuthType = {
@@ -28,40 +24,29 @@ const authSlice = createSlice({
   name: "authSlice",
   initialState,
   reducers: {
-    loginStart: (state) => {
-      state.isLoading = true;
-    },
-    loginSuccess: (state, action) => {
-      state.isLoading = false;
-      state.currentUser = action.payload;
-      state.error = null;
-    },
-    loginFailed: (state) => {
-      state.isLoading = false;
-      state.error = "Login Failed";
-    },
-    logoutStart: (state) => {
-      state.isLoading = true;
-    },
     logoutSuccess: (state) => {
       state.isLoading = false;
       state.currentUser = {};
       state.error = null;
     },
-    logoutFailed: (state) => {
+  },
+  extraReducers(builder) {
+    builder.addCase(login.pending, (state) => {
+      state.isLoading = true;
+    });
+    builder.addCase(login.fulfilled, (state, action) => {
+      console.log(action.payload);
       state.isLoading = false;
-      state.error = "Logout Failed";
-    },
+      state.currentUser = action.payload;
+      state.error = null;
+    });
+    builder.addCase(login.rejected, (state, action) => {
+      state.isLoading = false;
+      state.error = action.payload;
+    });
   },
 });
 
 export default authSlice.reducer;
 
-export const {
-  loginStart,
-  loginSuccess,
-  loginFailed,
-  logoutStart,
-  logoutSuccess,
-  logoutFailed,
-} = authSlice.actions;
+export const { logoutSuccess } = authSlice.actions;

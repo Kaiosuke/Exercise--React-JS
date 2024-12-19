@@ -1,35 +1,5 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
-import {
-  loginFailed,
-  loginStart,
-  loginSuccess,
-} from "../redux/slices/authSlice";
 import { instanceDummy, instanceLocal } from "./instance";
-
-const register = async (data: any[]) => {
-  try {
-    const res = await instanceLocal.post("register", data);
-    return { status: res.data };
-  } catch (error) {
-    const err = error as { response?: { data?: string; status?: number } };
-    console.log(err.response);
-    return { status: err.response?.status, message: err.response?.data };
-  }
-};
-
-const login = async (data: any[], dispatch: any) => {
-  dispatch(loginStart());
-  try {
-    const res = await instanceLocal.post("login", data);
-    dispatch(loginSuccess(res.data));
-    return res.data;
-  } catch (error) {
-    const err = error as { response?: { data?: string; status?: number } };
-    dispatch(loginFailed());
-    console.log(err.response);
-    return { status: err.response?.status };
-  }
-};
 
 const getProduct = async (path: string, id: number) => {
   try {
@@ -70,7 +40,9 @@ const getAllProducts = createAsyncThunk(
           order: order,
         },
       });
-      return res.data;
+      if (res.status === 200) {
+        return res.data;
+      }
     } catch (error: any) {
       if (!error.response) {
         throw error;
@@ -133,7 +105,7 @@ const deleteData = async (path: string, id: number) => {
     }
     return true;
   } catch (error) {
-    // console.log(error);
+    console.log(error);
   }
 };
 
@@ -144,7 +116,5 @@ export {
   getData,
   getDataList,
   getProduct,
-  login,
-  register,
   updateData,
 };

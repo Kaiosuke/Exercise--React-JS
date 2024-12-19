@@ -16,6 +16,7 @@ import DbModelAdd from "@/components/DbModelAdd";
 import DbModelDelete from "@/components/DbModelDelete";
 import DbModelUpdate from "@/components/DbModelUpdate";
 import Loading from "@/components/Loading";
+import { IProducts } from "@/interfaces";
 import { productListSelector } from "@/redux/selector";
 import { AppDispatch } from "@/redux/store";
 import { GrFormNext, GrFormPrevious } from "react-icons/gr";
@@ -34,10 +35,10 @@ const DbProduct = () => {
   const dispatch = useDispatch<AppDispatch>();
 
   useEffect(() => {
-    dispatch(getProducts("products"));
+    dispatch(getProducts({ path: "products" }));
   }, [dispatch]);
 
-  const { dataList, isLoading, error } = useSelector(productListSelector);
+  const { dataList, isLoading } = useSelector(productListSelector);
 
   const [products, setProducts] = useState(dataList);
 
@@ -49,7 +50,7 @@ const DbProduct = () => {
     refAdd.current && refAdd.current.showModal();
   };
 
-  const handleAdd = async (product: any) => {
+  const handleAdd = async (product: IProducts) => {
     dispatch(addDbProduct({ path: "products", data: product }));
   };
 
@@ -58,7 +59,7 @@ const DbProduct = () => {
     refUpdate.current && refUpdate.current.showModal();
   };
 
-  const handleUpdate = async (product: any) => {
+  const handleUpdate = async (product: IProducts) => {
     if (productId) {
       dispatch(
         updateDbProduct({ path: "products", id: productId, data: product })
@@ -92,10 +93,6 @@ const DbProduct = () => {
         <Loading />
       </div>
     );
-  }
-
-  if (error) {
-    return <div>{error}</div>;
   }
 
   return (

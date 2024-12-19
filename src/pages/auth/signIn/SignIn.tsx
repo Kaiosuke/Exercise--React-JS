@@ -1,4 +1,5 @@
-import { login } from "@/api/requestApi";
+import { login } from "@/api/authApi";
+import { IUser } from "@/interfaces";
 import { loginForm } from "@/reactHookForm";
 import { AppDispatch } from "@/redux/store";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -7,7 +8,7 @@ import { FormProvider, useForm } from "react-hook-form";
 import { FaEyeSlash } from "react-icons/fa";
 import { IoEyeSharp } from "react-icons/io5";
 import { useDispatch } from "react-redux";
-import { NavLink, useNavigate } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 const SignIn = () => {
   const [showPassword, setShowPassword] = useState(false);
@@ -22,15 +23,12 @@ const SignIn = () => {
 
   const dispatch = useDispatch<AppDispatch>();
 
-  const navigate = useNavigate();
-
-  const handleSubmit = async (data: any) => {
-    const isLogin = await login(data, dispatch);
-    if (isLogin.status === 400) {
-      window.alert("Incorrect account or password");
-      return;
+  const handleSubmit = async (user: IUser) => {
+    try {
+      await dispatch(login(user)).unwrap();
+    } catch (error) {
+      alert(error);
     }
-    navigate("/");
   };
 
   const handleShowPassWord = () => {

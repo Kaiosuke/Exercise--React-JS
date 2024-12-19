@@ -4,11 +4,12 @@ import {
   getProducts,
   updateDbProduct,
 } from "@/api/productApi";
+import { IProducts } from "@/interfaces";
 import { createSlice } from "@reduxjs/toolkit";
 
 interface DataStateType {
-  dataList: any[];
   isLoading: boolean;
+  dataList: IProducts[];
   error: null | string | undefined;
 }
 
@@ -53,7 +54,7 @@ const dbProductSlice = createSlice({
       })
       .addCase(updateDbProduct.fulfilled, (state, action) => {
         state.isLoading = false;
-        state.dataList = state.dataList.map((data: { id: number }) =>
+        state.dataList = state.dataList.map((data) =>
           data.id === action.payload.id ? action.payload : data
         );
       });
@@ -69,7 +70,7 @@ const dbProductSlice = createSlice({
       .addCase(deleteDbProduct.fulfilled, (state, action) => {
         state.isLoading = false;
         state.dataList = state.dataList.filter(
-          (data: { id: number }) => data.id !== action.payload
+          (data) => data.id !== action.payload.id
         );
       });
     builder.addCase(deleteDbProduct.rejected, (state, action) => {

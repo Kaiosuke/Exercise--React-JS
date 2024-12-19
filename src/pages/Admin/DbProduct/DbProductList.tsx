@@ -1,16 +1,11 @@
+import { IProducts } from "@/interfaces";
 import { FaEdit } from "react-icons/fa";
 import { MdDelete } from "react-icons/md";
 
 interface PropsType {
   onShowMdDelete: (id: number) => void;
   onShowUpdate: (id: number) => void;
-  product: {
-    id: number;
-    title: string;
-    category: string;
-    stock: number;
-    price: number;
-  };
+  product: IProducts;
 }
 
 const DbProductList = ({
@@ -30,13 +25,13 @@ const DbProductList = ({
       <th className="flex items-center gap-2">
         <button
           className="btn btn-info text-white flex items-center text-base"
-          onClick={() => onShowUpdate(product.id)}
+          onClick={() => product.id && onShowUpdate(product.id)}
         >
           <FaEdit />
         </button>
         <button
           className="btn btn-error text-white flex items-center text-base"
-          onClick={() => onShowMdDelete(product.id)}
+          onClick={() => product.id && onShowMdDelete(product.id)}
         >
           <MdDelete />
         </button>

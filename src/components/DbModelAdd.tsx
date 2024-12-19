@@ -1,3 +1,4 @@
+import { IProducts } from "@/interfaces";
 import { productsForm } from "@/reactHookForm";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { forwardRef } from "react";
@@ -5,14 +6,7 @@ import { FormProvider, useForm } from "react-hook-form";
 
 interface DbModelAddProps {
   name: string;
-  onAdd: (data: any) => void;
-}
-
-interface FormDataProps {
-  title: string;
-  category: string;
-  stock: number;
-  price: number;
+  onAdd: (data: IProducts) => void;
 }
 
 const DbModelAdd = forwardRef<HTMLDialogElement, DbModelAddProps>(
@@ -33,7 +27,7 @@ const DbModelAdd = forwardRef<HTMLDialogElement, DbModelAddProps>(
       }
     };
 
-    const handleGetData = (data: FormDataProps) => {
+    const handleGetData = (data: IProducts) => {
       onAdd(data);
       methods.reset();
       handleClose();

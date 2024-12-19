@@ -14,12 +14,19 @@
       "name": "trongle2",
       "confirmPassword": "trongle2001",
       "id": 2
+    },
+    {
+      "email": "trongleele6@gmail.com",
+      "password": "$2a$10$eLF4adaBzgmQqpT/xGxPZOGCaXOGCF0ewNZr/W2qfwDYMeaBn96dq",
+      "name": "321312312312",
+      "confirmPassword": "trongle2001",
+      "id": 3
     }
   ],
   "products": [
     {
       "id": 12,
-      "title": "Annibale Colombo31231112",
+      "title": "Annibale Colombo31231112asa11",
       "description": "The Annibale Colombo Sofa is a sophisticated and comfortable seating option, featuring exquisite design and premium upholstery for your living room.",
       "category": "furniture",
       "price": 2499.99,
@@ -1007,9 +1014,9 @@
       "id": 48
     },
     {
-      "title": "321321321aaa",
-      "category": "312312",
-      "price": 123123,
+      "title": "3213123",
+      "category": "321312",
+      "price": 2312,
       "stock": 3123,
       "id": 49
     }
