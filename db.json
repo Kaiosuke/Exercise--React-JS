@@ -33,7 +33,7 @@
   "products": [
     {
       "id": 15,
-      "title": "Wooden Bathroom Sink With Mirror3211",
+      "title": "Wooden Bathroom Sink With Mi",
       "description": "The Wooden Bathroom Sink with Mirror is a unique and stylish addition to your bathroom, featuring a wooden sink countertop and a matching mirror.",
       "category": "furniture",
       "price": 799.99,
@@ -95,7 +95,7 @@
     },
     {
       "id": 18,
-      "title": "Cat Food22",
+      "title": "Cat Food2211",
       "description": "Nutritious cat food formulated to meet the dietary needs of your feline friend.",
       "category": "groceries",
       "price": 8.99,
@@ -803,13 +803,6 @@
       "id": 32
     },
     {
-      "title": "321",
-      "category": "321",
-      "stock": 321,
-      "price": 21,
-      "id": 33
-    },
-    {
       "title": "32",
       "category": "32",
       "stock": 321,
@@ -852,11 +845,18 @@
       "id": 40
     },
     {
-      "title": "đâsdas",
-      "category": "123",
-      "price": 312,
-      "stock": 3123,
+      "title": "3123123aaa",
+      "category": "33",
+      "price": 312312321,
+      "stock": 312,
       "id": 41
+    },
+    {
+      "title": "312312aa",
+      "category": "321321",
+      "price": 2312,
+      "stock": 312,
+      "id": 42
     }
   ],
   "todos": [

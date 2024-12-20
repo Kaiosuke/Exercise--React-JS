@@ -99,7 +99,7 @@ const Product = () => {
               : "flex flex-col gap-4"
           }`}
         >
-          {products.length > 0 ? (
+          {products.length ? (
             products.map((data, index) => (
               <ProductList key={index} data={data} view={view} />
             ))

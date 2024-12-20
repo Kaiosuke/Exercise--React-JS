@@ -81,7 +81,8 @@ const DbProduct = () => {
   };
 
   const offset = currentPage * itemsPerPage;
-  const currentItems = products.slice(offset, offset + itemsPerPage);
+  const currentItems =
+    products && products.slice(offset, offset + itemsPerPage);
 
   const handlePageClick = ({ selected }: { selected: number }) => {
     setCurrentPage(selected);
@@ -172,7 +173,7 @@ const DbProduct = () => {
               </tr>
             </thead>
             <tbody>
-              {currentItems &&
+              {currentItems ? (
                 currentItems.map((product, index) => (
                   <DbProductList
                     key={index}
@@ -180,7 +181,12 @@ const DbProduct = () => {
                     onShowUpdate={handleShowUpdate}
                     onShowMdDelete={handleShowMdDelete}
                   />
-                ))}
+                ))
+              ) : (
+                <tr>
+                  <td>Products is Empty</td>
+                </tr>
+              )}
             </tbody>
           </table>
         </div>
@@ -190,7 +196,7 @@ const DbProduct = () => {
             nextLabel={<GrFormNext />}
             breakLabel={"..."}
             breakClassName={"break-me"}
-            pageCount={Math.ceil(products.length / itemsPerPage)}
+            pageCount={products && Math.ceil(products.length / itemsPerPage)}
             marginPagesDisplayed={2}
             pageRangeDisplayed={5}
             onPageChange={handlePageClick}

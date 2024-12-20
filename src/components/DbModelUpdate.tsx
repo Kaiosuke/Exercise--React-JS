@@ -1,4 +1,5 @@
 import { getData } from "@/api/requestApi";
+import { IProducts } from "@/interfaces";
 import { productsForm } from "@/reactHookForm";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { forwardRef, useEffect, useState } from "react";
@@ -11,7 +12,7 @@ interface DataProps {
   stock: number;
 }
 interface DbModelUpdateProps {
-  onUpdate: any;
+  onUpdate: (data: IProducts) => void;
   id: number | null;
   name: string;
 }
